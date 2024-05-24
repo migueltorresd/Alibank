@@ -1,0 +1,28 @@
+{
+  "workbench.iconTheme": "material-icon-theme",
+  "material-icon-theme.activeIconPack": "nest",
+  "material-icon-theme.folders.theme": "specific",
+  "explorer.compactFolders": false,
+  "jest.autoRun": "off",
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#a22117",
+    "activityBar.background": "#a22117",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#041c06",
+    "activityBarBadge.foreground": "#e7e7e7",
+    "commandCenter.border": "#e7e7e799",
+    "sash.hoverBorder": "#a22117",
+    "statusBar.background": "#751811",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#a22117",
+    "statusBarItem.remoteBackground": "#751811",
+    "statusBarItem.remoteForeground": "#e7e7e7",
+    "titleBar.activeBackground": "#751811",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveBackground": "#75181199",
+    "titleBar.inactiveForeground": "#e7e7e799"
+  },
+  "peacock.color": "#751811",
+  "typescript.tsdk": "node_modules\\typescript\\lib"
+}
