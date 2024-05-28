@@ -253,8 +253,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="44"
-                                    class="link-to-prism">src/data/persistence/repositories/transfer.repository.ts:44</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="46"
+                                    class="link-to-prism">src/data/persistence/repositories/transfer.repository.ts:46</a></div>
                         </td>
                     </tr>
 
@@ -343,8 +343,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="85"
-                                    class="link-to-prism">src/data/persistence/repositories/transfer.repository.ts:85</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="89"
+                                    class="link-to-prism">src/data/persistence/repositories/transfer.repository.ts:89</a></div>
                         </td>
                     </tr>
 
@@ -386,8 +386,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="156"
-                                    class="link-to-prism">src/data/persistence/repositories/transfer.repository.ts:156</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="161"
+                                    class="link-to-prism">src/data/persistence/repositories/transfer.repository.ts:161</a></div>
                         </td>
                     </tr>
 
@@ -465,8 +465,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="141"
-                                    class="link-to-prism">src/data/persistence/repositories/transfer.repository.ts:141</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="147"
+                                    class="link-to-prism">src/data/persistence/repositories/transfer.repository.ts:147</a></div>
                         </td>
                     </tr>
 
@@ -574,8 +574,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="98"
-                                    class="link-to-prism">src/data/persistence/repositories/transfer.repository.ts:98</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="102"
+                                    class="link-to-prism">src/data/persistence/repositories/transfer.repository.ts:102</a></div>
                         </td>
                     </tr>
 
@@ -649,8 +649,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="120"
-                                    class="link-to-prism">src/data/persistence/repositories/transfer.repository.ts:120</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="126"
+                                    class="link-to-prism">src/data/persistence/repositories/transfer.repository.ts:126</a></div>
                         </td>
                     </tr>
 
@@ -758,8 +758,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="53"
-                                    class="link-to-prism">src/data/persistence/repositories/transfer.repository.ts:53</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="55"
+                                    class="link-to-prism">src/data/persistence/repositories/transfer.repository.ts:55</a></div>
                         </td>
                     </tr>
 
@@ -903,8 +903,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="59"
-                                    class="link-to-prism">src/data/persistence/repositories/transfer.repository.ts:59</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="61"
+                                    class="link-to-prism">src/data/persistence/repositories/transfer.repository.ts:61</a></div>
                         </td>
                     </tr>
 
@@ -1079,7 +1079,9 @@ export class TransferRepository implements TransferRepositoryInterface {
   update(id: string, entity: TransferEntity): Promise&lt;TransferEntity&gt; {
     return this.transferRepository.update(id, entity).then((result) &#x3D;&gt; {
       if (result.affected &#x3D;&#x3D;&#x3D; 0) {
-        throw new NotFoundException(&#x60;El ID ${id} no existe en la base de datos&#x60;);
+        throw new NotFoundException(
+          &#x60;El ID ${id} no existe en la base de datos&#x60;,
+        );
       }
       return entity;
     });
@@ -1115,7 +1117,9 @@ export class TransferRepository implements TransferRepositoryInterface {
         if (result) {
           return result;
         } else {
-          throw new NotFoundException(&#x60;El ID ${id} no existe en la base de datos&#x60;);
+          throw new NotFoundException(
+            &#x60;El ID ${id} no existe en la base de datos&#x60;,
+          );
         }
       });
     newTransfer &#x3D; {
@@ -1154,7 +1158,9 @@ export class TransferRepository implements TransferRepositoryInterface {
         if (result) {
           return result;
         } else {
-          throw new NotFoundException(&#x60;El ID ${id} no existe en la base de datos&#x60;);
+          throw new NotFoundException(
+            &#x60;El ID ${id} no existe en la base de datos&#x60;,
+          );
         }
       });
   }
@@ -1198,7 +1204,6 @@ export class TransferRepository implements TransferRepositoryInterface {
         inCome: { id: accountId },
       },
       relations: [&#x27;inCome&#x27;, &#x27;outCome&#x27;],
-
     });
   }
 
@@ -1211,7 +1216,6 @@ export class TransferRepository implements TransferRepositoryInterface {
         dateTime: Between(dateInit, dateEnd),
       },
       relations: [&#x27;inCome&#x27;, &#x27;outCome&#x27;],
-
     });
   }
 }

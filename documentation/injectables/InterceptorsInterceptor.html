@@ -117,6 +117,13 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Interceptor para manejar la lógica previa y posterior a la ejecución de un controlador.</p>
+
+            </p>
 
 
 
@@ -174,14 +181,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="11"
-                                    class="link-to-prism">src/presentation/interceptors/interceptors.interceptor.ts:11</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="20"
+                                    class="link-to-prism">src/presentation/interceptors/interceptors.interceptor.ts:20</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Intercepta una solicitud y permite ejecutar lógica antes y después del manejo del controlador.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -192,6 +201,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -206,6 +216,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>El contexto de ejecución que contiene la solicitud.</p>
+
+                                            </td>
                                         </tr>
                                         <tr>
                                                 <td>next</td>
@@ -218,6 +232,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>El manejador de la llamada que permite continuar con la ejecución del siguiente interceptor o controlador.</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -227,7 +245,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Un Observable que contiene la respuesta del controlador.</p>
+
                             </div>
                 </td>
             </tr>
@@ -247,8 +266,17 @@
 } from &#x27;@nestjs/common&#x27;;
 import { Observable } from &#x27;rxjs&#x27;;
 
+/**
+ * Interceptor para manejar la lógica previa y posterior a la ejecución de un controlador.
+ */
 @Injectable()
 export class InterceptorsInterceptor implements NestInterceptor {
+  /**
+   * Intercepta una solicitud y permite ejecutar lógica antes y después del manejo del controlador.
+   * @param context El contexto de ejecución que contiene la solicitud.
+   * @param next El manejador de la llamada que permite continuar con la ejecución del siguiente interceptor o controlador.
+   * @returns Un Observable que contiene la respuesta del controlador.
+   */
   intercept(context: ExecutionContext, next: CallHandler): Observable&lt;any&gt; {
     return next.handle();
   }

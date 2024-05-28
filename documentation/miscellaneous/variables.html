@@ -174,11 +174,19 @@
                 <tr>
                     <td class="col-md-4">
                         <i>Default value : </i><code>{
+  // La propiedad secret se asigna al valor de la variable de entorno JWT_SECRET si está definida;
+  // de lo contrario, se usa &#x27;secretKey&#x27; como valor predeterminado.
   secret: process.env.JWT_SECRET ?? &#x27;secretKey&#x27;,
 }</code>
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Este archivo exporta un objeto jwtConstants que contiene la clave secreta utilizada para firmar y verificar tokens JWT.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>

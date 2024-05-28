@@ -128,7 +128,8 @@
                 <h3>Description</h3>
             </p>
             <p class="comment">
-                <p>Interfaz para el modelo de transferencia</p>
+                <p>Interfaz que define la estructura de datos para el modelo de transferencia.</p>
+<p>Esta interfaz representa los campos y tipos de datos asociados con una transferencia de fondos entre cuentas.</p>
 
             </p>
 
@@ -230,6 +231,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Monto de la transferencia</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -263,6 +270,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Fecha y hora de la transferencia</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -301,6 +314,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Fecha y hora en la que la transferencia fue eliminada (opcional)</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -334,6 +353,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Identificador único de la transferencia</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -367,6 +392,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Cuenta de entrada de la transferencia</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -400,6 +431,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Cuenta de salida de la transferencia</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -433,6 +470,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Razón o motivo de la transferencia</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -443,18 +486,34 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { AccountModel } from &#x27;.&#x27;;
 
 /**
- * Interfaz para el modelo de transferencia
- *
+ * Interfaz que define la estructura de datos para el modelo de transferencia.
+ * 
+ * @remarks
+ * Esta interfaz representa los campos y tipos de datos asociados con una transferencia de fondos entre cuentas.
+ * 
  * @export
  * @interface TransferModel
  */
 export interface TransferModel {
+  /** Identificador único de la transferencia */
   id: string;
+
+  /** Cuenta de salida de la transferencia */
   outCome: AccountModel;
+
+  /** Cuenta de entrada de la transferencia */
   inCome: AccountModel;
+
+  /** Monto de la transferencia */
   amount: number;
+
+  /** Razón o motivo de la transferencia */
   reason: string;
+
+  /** Fecha y hora de la transferencia */
   dateTime: Date | number;
+
+  /** Fecha y hora en la que la transferencia fue eliminada (opcional) */
   deletedAt?: Date | number;
 }
 </code></pre>

@@ -121,6 +121,13 @@
             </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Controlador para gestionar las operaciones de seguridad como registro, inicio de sesión y cierre de sesión.</p>
+
+            </p>
 
 
 
@@ -196,14 +203,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="20"
-                                    class="link-to-prism">src/presentation/controllers/security/security.controller.ts:20</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="38"
+                                    class="link-to-prism">src/presentation/controllers/security/security.controller.ts:38</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Cierra la sesión de un usuario.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -214,6 +223,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -228,6 +238,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>El cuerpo de la solicitud que contiene el token JWT del usuario.</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -237,7 +251,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Un booleano que indica si el cierre de sesión fue exitoso.</p>
+
                             </div>
                 </td>
             </tr>
@@ -272,14 +287,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="15"
-                                    class="link-to-prism">src/presentation/controllers/security/security.controller.ts:15</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="28"
+                                    class="link-to-prism">src/presentation/controllers/security/security.controller.ts:28</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Inicia sesión de un usuario.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -290,6 +307,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -304,6 +322,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>Los datos de inicio de sesión del usuario.</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -313,7 +335,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Una promesa que resuelve con el token JWT si el inicio de sesión es exitoso.</p>
+
                             </div>
                 </td>
             </tr>
@@ -348,14 +371,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="10"
-                                    class="link-to-prism">src/presentation/controllers/security/security.controller.ts:10</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="18"
+                                    class="link-to-prism">src/presentation/controllers/security/security.controller.ts:18</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Registra un nuevo usuario.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -366,6 +391,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -380,6 +406,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>Los datos del nuevo usuario.</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -389,7 +419,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Una promesa que resuelve con la información del usuario registrado.</p>
+
                             </div>
                 </td>
             </tr>
@@ -403,20 +434,38 @@
 import { SecurityService } from &#x27;../../../business/services&#x27;;
 import { CustomerDTO, SignDTO } from &#x27;../../../business/dtos&#x27;;
 
+/**
+ * Controlador para gestionar las operaciones de seguridad como registro, inicio de sesión y cierre de sesión.
+ */
 @Controller(&#x27;security&#x27;)
 export class SecurityController {
   constructor(private readonly securityService: SecurityService) {}
 
+  /**
+   * Registra un nuevo usuario.
+   * @param customer Los datos del nuevo usuario.
+   * @returns Una promesa que resuelve con la información del usuario registrado.
+   */
   @Post(&#x27;sign-up&#x27;)
   signUp(@Body() customer: CustomerDTO) {
     return this.securityService.signUp(customer);
   }
 
+  /**
+   * Inicia sesión de un usuario.
+   * @param customer Los datos de inicio de sesión del usuario.
+   * @returns Una promesa que resuelve con el token JWT si el inicio de sesión es exitoso.
+   */
   @Post(&#x27;sign-in&#x27;)
   signIn(@Body() customer: SignDTO) {
     return this.securityService.signIn(customer);
   }
 
+  /**
+   * Cierra la sesión de un usuario.
+   * @param body El cuerpo de la solicitud que contiene el token JWT del usuario.
+   * @returns Un booleano que indica si el cierre de sesión fue exitoso.
+   */
   @Get(&#x27;logout&#x27;)
   logout(@Body() body: { JWT: string }): boolean {
     return this.securityService.signOut(body.JWT);

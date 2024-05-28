@@ -128,7 +128,8 @@
                 <h3>Description</h3>
             </p>
             <p class="comment">
-                <p>Interfaz para el modelo de cuenta</p>
+                <p>Interfaz que define la estructura de datos para el modelo de cuenta.</p>
+<p>Esta interfaz representa los campos y tipos de datos asociados con una cuenta.</p>
 
             </p>
 
@@ -224,6 +225,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Tipo de cuenta</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -257,6 +264,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Saldo de la cuenta</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -290,6 +303,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Cliente asociado a la cuenta</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -328,6 +347,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Fecha y hora en la que la cuenta fue eliminada (opcional)</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -361,6 +386,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Identificador único de la cuenta</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -394,6 +425,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Estado de la cuenta (activo/inactivo)</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -405,17 +442,31 @@
 import { AccountTypeModel } from &#x27;.&#x27;;
 
 /**
- * Interfaz para el modelo de cuenta
- *
+ * Interfaz que define la estructura de datos para el modelo de cuenta.
+ * 
+ * @remarks
+ * Esta interfaz representa los campos y tipos de datos asociados con una cuenta.
+ * 
  * @export
  * @interface AccountModel
  */
 export interface AccountModel {
+  /** Identificador único de la cuenta */
   id: string;
+
+  /** Cliente asociado a la cuenta */
   customer: CustomerModel;
+
+  /** Tipo de cuenta */
   accountType: AccountTypeModel;
+
+  /** Saldo de la cuenta */
   balance: number;
+
+  /** Estado de la cuenta (activo/inactivo) */
   state: boolean;
+
+  /** Fecha y hora en la que la cuenta fue eliminada (opcional) */
   deletedAt?: Date | number;
 }
 </code></pre>

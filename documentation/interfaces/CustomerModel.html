@@ -128,7 +128,8 @@
                 <h3>Description</h3>
             </p>
             <p class="comment">
-                <p>Interfaz para el modelo de cliente</p>
+                <p>Interfaz que define la estructura de datos para el modelo de cliente.</p>
+<p>Esta interfaz representa los campos y tipos de datos asociados con un cliente.</p>
 
             </p>
 
@@ -254,6 +255,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>URL del avatar del cliente (opcional)</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -292,6 +299,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Fecha y hora en la que el cliente fue eliminado (opcional)</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -325,6 +338,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Número de documento del cliente</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -358,6 +377,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Tipo de documento del cliente</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -391,6 +416,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Correo electrónico del cliente</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -424,6 +455,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Nombre completo del cliente</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -457,6 +494,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Identificador único del cliente</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -490,6 +533,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Contraseña del cliente</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -523,6 +572,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Número de teléfono del cliente</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -556,6 +611,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Estado del cliente (activo/inactivo)</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -566,21 +627,43 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { DocumentTypeModel } from &#x27;.&#x27;;
 
 /**
- * Interfaz para el modelo de cliente
- *
+ * Interfaz que define la estructura de datos para el modelo de cliente.
+ * 
+ * @remarks
+ * Esta interfaz representa los campos y tipos de datos asociados con un cliente.
+ * 
  * @export
  * @interface CustomerModel
  */
 export interface CustomerModel {
+  /** Identificador único del cliente */
   id: string;
+
+  /** Tipo de documento del cliente */
   documentType: DocumentTypeModel;
+
+  /** Número de documento del cliente */
   document: string;
+
+  /** Nombre completo del cliente */
   fullName: string;
+
+  /** Correo electrónico del cliente */
   email: string;
+
+  /** Número de teléfono del cliente */
   phone: string;
+
+  /** Contraseña del cliente */
   password: string;
+
+  /** URL del avatar del cliente (opcional) */
   avatarUrl?: string;
+
+  /** Estado del cliente (activo/inactivo) */
   state: boolean;
+
+  /** Fecha y hora en la que el cliente fue eliminado (opcional) */
   deletedAt?: Date | number;
 }
 </code></pre>

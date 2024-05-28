@@ -121,6 +121,13 @@
             </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Controlador para gestionar las operaciones relacionadas con los depósitos.</p>
+
+            </p>
 
 
 
@@ -199,14 +206,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="10"
-                                    class="link-to-prism">src/presentation/controllers/deposit/deposit.controller.ts:10</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="19"
+                                    class="link-to-prism">src/presentation/controllers/deposit/deposit.controller.ts:19</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Crea un nuevo depósito.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -217,6 +226,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -231,6 +241,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>Los datos del depósito a crear.</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -240,7 +254,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Una promesa que resuelve con la entidad del depósito creado.</p>
+
                             </div>
                 </td>
             </tr>
@@ -275,14 +290,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="31"
-                                    class="link-to-prism">src/presentation/controllers/deposit/deposit.controller.ts:31</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="49"
+                                    class="link-to-prism">src/presentation/controllers/deposit/deposit.controller.ts:49</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Elimina un depósito por su ID.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -293,6 +310,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -307,6 +325,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>El ID del depósito.</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -352,14 +374,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="15"
-                                    class="link-to-prism">src/presentation/controllers/deposit/deposit.controller.ts:15</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="29"
+                                    class="link-to-prism">src/presentation/controllers/deposit/deposit.controller.ts:29</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene el historial de depósitos.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -370,6 +394,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -384,6 +409,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>El cuerpo de la solicitud que contiene el ID de la cuenta, la paginación y opcionalmente el rango de fechas.</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -393,7 +422,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Una promesa que resuelve con un array de entidades de depósito.</p>
+
                             </div>
                 </td>
             </tr>
@@ -408,14 +438,28 @@ import { DataRangeDTO, DepositDTO, PaginationDTO } from &#x27;src/business/dtos&
 import { DepositService } from &#x27;../../../business/services&#x27;;
 import { DepositEntity } from &#x27;../../../data/persistence/entities&#x27;;
 
+/**
+ * Controlador para gestionar las operaciones relacionadas con los depósitos.
+ */
 @Controller(&#x27;deposit&#x27;)
 export class DepositController {
   constructor(private readonly depositService: DepositService) {}
+
+  /**
+   * Crea un nuevo depósito.
+   * @param account Los datos del depósito a crear.
+   * @returns Una promesa que resuelve con la entidad del depósito creado.
+   */
   @Post()
   async createDeposit(@Body() account: DepositDTO): Promise&lt;DepositEntity&gt; {
     return await this.depositService.createDeposit(account);
   }
 
+  /**
+   * Obtiene el historial de depósitos.
+   * @param body El cuerpo de la solicitud que contiene el ID de la cuenta, la paginación y opcionalmente el rango de fechas.
+   * @returns Una promesa que resuelve con un array de entidades de depósito.
+   */
   @Post(&#x27;all&#x27;)
   async GetAll(
     @Body()
@@ -432,6 +476,10 @@ export class DepositController {
     );
   }
 
+  /**
+   * Elimina un depósito por su ID.
+   * @param id El ID del depósito.
+   */
   @Delete(&#x27;:id&#x27;)
   deleteDeposit(@Param(&#x27;id&#x27;) id: string): void {
     this.depositService.deleteDeposit(id);

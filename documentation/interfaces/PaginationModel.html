@@ -128,7 +128,8 @@
                 <h3>Description</h3>
             </p>
             <p class="comment">
-                <p>Interfaz para el modelo de paginación</p>
+                <p>Interfaz que define la estructura de datos para el modelo de paginación.</p>
+<p>Esta interfaz representa los datos necesarios para implementar la paginación en una lista de elementos.</p>
 
             </p>
 
@@ -199,6 +200,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Longitud total de la lista de elementos</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -232,6 +239,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Página actual</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -240,7 +253,10 @@
 
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export interface PaginationModel {
+  /** Longitud total de la lista de elementos */
   length: number;
+
+  /** Página actual */
   page: number;
 }
 </code></pre>
