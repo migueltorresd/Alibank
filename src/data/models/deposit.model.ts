@@ -1,5 +1,11 @@
 import { AccountModel } from '.';
 
+/**
+ * Interfaz para el modelo de depósito
+ *
+ * @export
+ * @interface DepositModel
+ */
 export interface DepositModel {
   id: string;
   account: AccountModel;

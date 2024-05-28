@@ -21,30 +21,58 @@ export class CustomerService {
   ) {}
 
   /**
-   * Obtener información de un cliente
+   * Obtener información de un cliente por su ID
    *
-   * @param {string} customerId
-   * @return {*}  {CustomerEntity}
+   * @param {string} customerId ID del cliente
+   * @return {*} {Promise<CustomerEntity>} Entidad del cliente encontrado
    * @memberof CustomerService
    */
   async getCustomerInfo(customerId: string): Promise<CustomerEntity> {
     const newCustomer = await this.customerRepository.findOneById(customerId);
     return newCustomer;
   }
+
+  /**
+   * Obtener información de un cliente por su correo electrónico
+   *
+   * @param {string} email Correo electrónico del cliente
+   * @return {*} {Promise<CustomerEntity>} Entidad del cliente encontrado
+   * @memberof CustomerService
+   */
   async getCustomerInfoByEmail(email: string): Promise<CustomerEntity> {
     const newCustomer = await this.customerRepository.findOneByEmail(email);
     return newCustomer;
   }
 
+  /**
+   * Obtener todos los clientes activos
+   *
+   * @return {*} {Promise<CustomerEntity[]>} Lista de clientes activos
+   * @memberof CustomerService
+   */
   async findAll(): Promise<CustomerEntity[]> {
     return (await this.customerRepository.findAll()).filter(
       (item) => (item.deletedAt ?? true) === true,
     );
   }
+
+  /**
+   * Obtener todos los clientes eliminados
+   *
+   * @return {*} {Promise<CustomerEntity[]>} Lista de clientes eliminados
+   * @memberof CustomerService
+   */
   findAllDeleted(): Promise<CustomerEntity[]> {
     return this.customerRepository.findAllDeleted();
   }
 
+  /**
+   * Transformar datos del cliente a entidad del cliente
+   *
+   * @param {CustomerDTO} customer Datos del cliente
+   * @return {*} {CustomerEntity} Entidad del cliente creada
+   * @memberof CustomerService
+   */
   transform(customer: CustomerDTO): CustomerEntity {
     const documentType = new DocumentTypeEntity();
     documentType.id = customer.documentTypeId;
@@ -58,10 +86,14 @@ export class CustomerService {
     return newCustomer;
   }
 
-  async newCustomer(customer: CustomerDTO): Promise<{
-    customer: CustomerEntity;
-    account: AccountEntity;
-  }> {
+  /**
+   * Registrar un nuevo cliente en el sistema
+   *
+   * @param {CustomerDTO} customer Datos del nuevo cliente
+   * @return {*} {Promise<{ customer: CustomerEntity; account: AccountEntity }>} Cliente y cuenta creados
+   * @memberof CustomerService
+   */
+  async newCustomer(customer: CustomerDTO): Promise<{ customer: CustomerEntity; account: AccountEntity }> {
     const documentType = new DocumentTypeEntity();
     documentType.id = customer.documentTypeId;
 
@@ -71,7 +103,7 @@ export class CustomerService {
     newCustomer.fullName = customer.fullName;
     if (await this.customerRepository.existEmail(customer.email)) {
       throw new NotFoundException(
-        `El email ${customer.email} ya  existe en base de datos`,
+        `El email ${customer.email} ya existe en la base de datos`,
       );
     }
     newCustomer.email = customer.email;
@@ -90,9 +122,9 @@ export class CustomerService {
   /**
    * Actualizar información de un cliente
    *
-   * @param {string} id
-   * @param {CustomerModel} customer
-   * @return {*}  {CustomerEntity}
+   * @param {string} id ID del cliente a actualizar
+   * @param {CustomerUpdateDTO} customer Nuevos datos del cliente
+   * @return {*} {Promise<CustomerEntity>} Entidad del cliente actualizado
    * @memberof CustomerService
    */
   async updatedCustomer(
@@ -113,8 +145,8 @@ export class CustomerService {
   /**
    * Dar de baja a un cliente en el sistema
    *
-   * @param {string} id
-   * @return {*}  {boolean}
+   * @param {string} id ID del cliente a dar de baja
+   * @return {*} {Promise<boolean>} true si el cliente se dio de baja con éxito, false de lo contrario
    * @memberof CustomerService
    */
   async unsuscribe(id: string): Promise<boolean> {
@@ -129,6 +161,13 @@ export class CustomerService {
     return false;
   }
 
+  /**
+   * Eliminar un cliente del sistema
+   *
+   * @param {string} id ID del cliente a eliminar
+   * @return {*} {Promise<boolean>} true si el cliente se eliminó con éxito, false de lo contrario
+   * @memberof CustomerService
+   */
   async deleteCustomer(id: string): Promise<boolean> {
     if (
       (await this.customerRepository.findOneById(id)).deletedAt === undefined

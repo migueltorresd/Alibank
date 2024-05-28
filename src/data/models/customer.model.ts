@@ -1,5 +1,11 @@
 import { DocumentTypeModel } from '.';
 
+/**
+ * Interfaz para el modelo de cliente
+ *
+ * @export
+ * @interface CustomerModel
+ */
 export interface CustomerModel {
   id: string;
   documentType: DocumentTypeModel;

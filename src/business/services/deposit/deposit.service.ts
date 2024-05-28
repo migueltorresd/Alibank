@@ -17,10 +17,10 @@ export class DepositService {
   ) {}
 
   /**
-   * Crear un deposito
+   * Crear un depósito
    *
-   * @param {DepositModel} deposit
-   * @return {*}  {DepositEntity}
+   * @param {DepositDTO} deposit Datos del depósito
+   * @return {*} {Promise<DepositEntity>} Entidad del depósito creado
    * @memberof DepositService
    */
   async createDeposit(deposit: DepositDTO): Promise<DepositEntity> {
@@ -38,9 +38,9 @@ export class DepositService {
   }
 
   /**
-   * Borrar un deposito
+   * Borrar un depósito
    *
-   * @param {string} depositId
+   * @param {string} depositId ID del depósito a borrar
    * @memberof DepositService
    */
   deleteDeposit(depositId: string): void {
@@ -48,12 +48,12 @@ export class DepositService {
   }
 
   /**
-   * Obtener el historial de los depósitos en una cuenta
+   * Obtener el historial de depósitos en una cuenta
    *
-   * @param {string} accountId
-   * @param {PaginationModel} pagination
-   * @param {DataRangeModel} [dataRange]
-   * @return {*}  {DepositEntity[]}
+   * @param {string} accountId ID de la cuenta
+   * @param {PaginationDTO} pagination Configuración de paginación
+   * @param {DataRangeDTO} [dataRange] Rango de fechas y montos para filtrar
+   * @return {*} {Promise<DepositEntity[]>} Lista de depósitos
    * @memberof DepositService
    */
   async getHistory(
