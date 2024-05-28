@@ -124,6 +124,14 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Interfaz para el repositorio de clientes.</p>
+<p>Extiende la interfaz base de repositorio y define métodos adicionales específicos para los clientes.</p>
+
+            </p>
 
             <p class="comment">
                 <h3>Extends</h3>
@@ -212,14 +220,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="14"
-                                    class="link-to-prism">src/data/persistence/repositories/interfaces/customer-repository.interface.ts:14</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="71"
+                                    class="link-to-prism">src/data/persistence/repositories/interfaces/customer-repository.interface.ts:71</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Encuentra clientes por nombre completo.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -230,6 +240,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -244,6 +255,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>Nombre completo del cliente</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -253,7 +268,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Promesa que resuelve con un arreglo de clientes que tienen el nombre completo especificado</p>
+
                             </div>
                 </td>
             </tr>
@@ -279,14 +295,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="13"
-                                    class="link-to-prism">src/data/persistence/repositories/interfaces/customer-repository.interface.ts:13</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="62"
+                                    class="link-to-prism">src/data/persistence/repositories/interfaces/customer-repository.interface.ts:62</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Encuentra clientes por estado.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -297,6 +315,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -311,6 +330,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>Estado del cliente a buscar</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -320,7 +343,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Promesa que resuelve con un arreglo de clientes que coinciden con el estado especificado</p>
+
                             </div>
                 </td>
             </tr>
@@ -346,14 +370,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="7"
-                                    class="link-to-prism">src/data/persistence/repositories/interfaces/customer-repository.interface.ts:7</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="32"
+                                    class="link-to-prism">src/data/persistence/repositories/interfaces/customer-repository.interface.ts:32</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Encuentra un cliente por tipo de documento y número de documento.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -364,6 +390,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -378,6 +405,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>ID del tipo de documento del cliente</p>
+
+                                            </td>
                                         </tr>
                                         <tr>
                                                 <td>document</td>
@@ -390,6 +421,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>Número de documento del cliente</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -399,7 +434,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Promesa que resuelve con el cliente encontrado</p>
+
                             </div>
                 </td>
             </tr>
@@ -425,14 +461,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="11"
-                                    class="link-to-prism">src/data/persistence/repositories/interfaces/customer-repository.interface.ts:11</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="44"
+                                    class="link-to-prism">src/data/persistence/repositories/interfaces/customer-repository.interface.ts:44</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Encuentra un cliente por correo electrónico.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -443,6 +481,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -457,6 +496,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>Correo electrónico del cliente</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -466,7 +509,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Promesa que resuelve con el cliente encontrado</p>
+
                             </div>
                 </td>
             </tr>
@@ -492,14 +536,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="6"
-                                    class="link-to-prism">src/data/persistence/repositories/interfaces/customer-repository.interface.ts:6</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="22"
+                                    class="link-to-prism">src/data/persistence/repositories/interfaces/customer-repository.interface.ts:22</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Encuentra un cliente por email y contraseña.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -510,6 +556,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -524,6 +571,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>Correo electrónico del cliente</p>
+
+                                            </td>
                                         </tr>
                                         <tr>
                                                 <td>password</td>
@@ -536,6 +587,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>Contraseña del cliente</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -545,7 +600,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Promesa que resuelve con un valor booleano indicando si se encontró el cliente</p>
+
                             </div>
                 </td>
             </tr>
@@ -571,14 +627,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="12"
-                                    class="link-to-prism">src/data/persistence/repositories/interfaces/customer-repository.interface.ts:12</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="53"
+                                    class="link-to-prism">src/data/persistence/repositories/interfaces/customer-repository.interface.ts:53</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Encuentra un cliente por número de teléfono.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -589,6 +647,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -603,6 +662,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>Número de teléfono del cliente</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -612,7 +675,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Promesa que resuelve con el cliente encontrado</p>
+
                             </div>
                 </td>
             </tr>
@@ -627,16 +691,73 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { CustomerEntity } from &#x27;../../entities&#x27;;
 import { BaseRepositoryInterface } from &#x27;./base/&#x27;;
 
-export interface CustomerRepositoryInterface
-  extends BaseRepositoryInterface&lt;CustomerEntity&gt; {
+/**
+ * Interfaz para el repositorio de clientes.
+ *
+ * Extiende la interfaz base de repositorio y define métodos adicionales específicos para los clientes.
+ *
+ * @export
+ * @interface CustomerRepositoryInterface
+ * @extends {BaseRepositoryInterface&lt;CustomerEntity&gt;} Interfaz base de repositorio para clientes
+ */
+export interface CustomerRepositoryInterface extends BaseRepositoryInterface&lt;CustomerEntity&gt; {
+  /**
+   * Encuentra un cliente por email y contraseña.
+   *
+   * @param {string} email Correo electrónico del cliente
+   * @param {string} password Contraseña del cliente
+   * @returns {Promise&lt;boolean&gt;} Promesa que resuelve con un valor booleano indicando si se encontró el cliente
+   * @memberof CustomerRepositoryInterface
+   */
   findOneByEmailAndPassword(email: string, password: string): Promise&lt;boolean&gt;;
+
+  /**
+   * Encuentra un cliente por tipo de documento y número de documento.
+   *
+   * @param {string} documentTypeId ID del tipo de documento del cliente
+   * @param {string} document Número de documento del cliente
+   * @returns {Promise&lt;CustomerEntity&gt;} Promesa que resuelve con el cliente encontrado
+   * @memberof CustomerRepositoryInterface
+   */
   findOneByDocumentTypeAndDocument(
     documentTypeId: string,
     document: string,
   ): Promise&lt;CustomerEntity&gt;;
+
+  /**
+   * Encuentra un cliente por correo electrónico.
+   *
+   * @param {string} email Correo electrónico del cliente
+   * @returns {Promise&lt;CustomerEntity&gt;} Promesa que resuelve con el cliente encontrado
+   * @memberof CustomerRepositoryInterface
+   */
   findOneByEmail(email: string): Promise&lt;CustomerEntity&gt;;
+
+  /**
+   * Encuentra un cliente por número de teléfono.
+   *
+   * @param {string} phone Número de teléfono del cliente
+   * @returns {Promise&lt;CustomerEntity&gt;} Promesa que resuelve con el cliente encontrado
+   * @memberof CustomerRepositoryInterface
+   */
   findOneByPhone(phone: string): Promise&lt;CustomerEntity&gt;;
+
+  /**
+   * Encuentra clientes por estado.
+   *
+   * @param {boolean} state Estado del cliente a buscar
+   * @returns {Promise&lt;CustomerEntity[]&gt;} Promesa que resuelve con un arreglo de clientes que coinciden con el estado especificado
+   * @memberof CustomerRepositoryInterface
+   */
   findByState(state: boolean): Promise&lt;CustomerEntity[]&gt;;
+
+  /**
+   * Encuentra clientes por nombre completo.
+   *
+   * @param {string} fullName Nombre completo del cliente
+   * @returns {Promise&lt;CustomerEntity[]&gt;} Promesa que resuelve con un arreglo de clientes que tienen el nombre completo especificado
+   * @memberof CustomerRepositoryInterface
+   */
   findByFullName(fullName: string): Promise&lt;CustomerEntity[]&gt;;
 }
 </code></pre>

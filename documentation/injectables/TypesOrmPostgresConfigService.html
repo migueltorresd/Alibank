@@ -117,6 +117,13 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Servicio para la configuración de opciones de TypeORM para PostgreSQL</p>
+
+            </p>
 
 
 
@@ -159,7 +166,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/data/persistence/configs/types-orm-postgres-config.service.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/data/persistence/configs/types-orm-postgres-config.service.ts:21</a></div>
                             </td>
                         </tr>
 
@@ -222,19 +229,25 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="17"
-                                    class="link-to-prism">src/data/persistence/configs/types-orm-postgres-config.service.ts:17</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="30"
+                                    class="link-to-prism">src/data/persistence/configs/types-orm-postgres-config.service.ts:30</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Método para crear las opciones de configuración de TypeORM para PostgreSQL</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>    <code>TypeOrmModuleOptions</code>
 
                         </div>
+                            <div class="io-description">
+                                <p>Opciones de configuración de TypeORM</p>
+
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -257,10 +270,23 @@ import {
   TransferEntity,
 } from &#x27;../entities&#x27;;
 
+/**
+ * Servicio para la configuración de opciones de TypeORM para PostgreSQL
+ *
+ * @export
+ * @class TypesOrmPostgresConfigService
+ * @implements {TypeOrmOptionsFactory}
+ */
 @Injectable()
 export class TypesOrmPostgresConfigService implements TypeOrmOptionsFactory {
   constructor(private readonly configService: ConfigService) {}
 
+  /**
+   * Método para crear las opciones de configuración de TypeORM para PostgreSQL
+   *
+   * @returns {TypeOrmModuleOptions} Opciones de configuración de TypeORM
+   * @memberof TypesOrmPostgresConfigService
+   */
   createTypeOrmOptions(): TypeOrmModuleOptions {
     return {
       type: &#x27;postgres&#x27;,

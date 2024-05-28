@@ -249,14 +249,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="26"
-                                    class="link-to-prism">src/data/persistence/repositories/deposit.repository.ts:26</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="41"
+                                    class="link-to-prism">src/data/persistence/repositories/deposit.repository.ts:41</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Elimina un depósito de la base de datos.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -267,6 +269,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -281,6 +284,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>El ID del depósito a eliminar.</p>
+
+                                            </td>
                                         </tr>
                                         <tr>
                                                 <td>soft</td>
@@ -293,6 +300,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>Indica si se debe realizar un borrado suave (soft delete).</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -328,19 +339,25 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="64"
-                                    class="link-to-prism">src/data/persistence/repositories/deposit.repository.ts:64</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="84"
+                                    class="link-to-prism">src/data/persistence/repositories/deposit.repository.ts:84</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Encuentra todos los depósitos en la base de datos.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="../entitys/DepositEntity.html" target="_self" >Promise&lt;DepositEntity[]&gt;</a></code>
 
                         </div>
+                            <div class="io-description">
+                                <p>Una promesa que resuelve en un arreglo de todos los depósitos.</p>
+
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -365,14 +382,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="83"
-                                    class="link-to-prism">src/data/persistence/repositories/deposit.repository.ts:83</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="119"
+                                    class="link-to-prism">src/data/persistence/repositories/deposit.repository.ts:119</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Encuentra todos los depósitos asociados a una cuenta en la base de datos.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -383,6 +402,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -397,6 +417,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>El ID de la cuenta asociada a los depósitos.</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -406,7 +430,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Una promesa que resuelve en un arreglo de todos los depósitos asociados a la cuenta.</p>
+
                             </div>
                 </td>
             </tr>
@@ -432,14 +457,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="90"
-                                    class="link-to-prism">src/data/persistence/repositories/deposit.repository.ts:90</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="132"
+                                    class="link-to-prism">src/data/persistence/repositories/deposit.repository.ts:132</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Encuentra todos los depósitos dentro de un rango de fechas en la base de datos.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -450,6 +477,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -464,6 +492,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>La fecha de inicio del rango.</p>
+
+                                            </td>
                                         </tr>
                                         <tr>
                                                 <td>dateEnd</td>
@@ -476,6 +508,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>La fecha de fin del rango.</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -485,7 +521,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Una promesa que resuelve en un arreglo de todos los depósitos dentro del rango de fechas.</p>
+
                             </div>
                 </td>
             </tr>
@@ -513,14 +550,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="68"
-                                    class="link-to-prism">src/data/persistence/repositories/deposit.repository.ts:68</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="97"
+                                    class="link-to-prism">src/data/persistence/repositories/deposit.repository.ts:97</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Encuentra un depósito por su ID en la base de datos.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -531,6 +570,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -545,6 +585,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>El ID del depósito a encontrar.</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -554,7 +598,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Una promesa que resuelve en el depósito encontrado.</p>
+
                             </div>
                 </td>
             </tr>
@@ -582,8 +627,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="35"
-                                    class="link-to-prism">src/data/persistence/repositories/deposit.repository.ts:35</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="50"
+                                    class="link-to-prism">src/data/persistence/repositories/deposit.repository.ts:50</a></div>
                         </td>
                     </tr>
 
@@ -649,14 +694,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="13"
-                                    class="link-to-prism">src/data/persistence/repositories/deposit.repository.ts:13</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="18"
+                                    class="link-to-prism">src/data/persistence/repositories/deposit.repository.ts:18</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Registra un nuevo depósito en la base de datos.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -667,6 +714,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -681,6 +729,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>Los datos del depósito a registrar.</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -690,7 +742,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Una promesa que resuelve en el depósito registrado.</p>
+
                             </div>
                 </td>
             </tr>
@@ -718,8 +771,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="41"
-                                    class="link-to-prism">src/data/persistence/repositories/deposit.repository.ts:41</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="56"
+                                    class="link-to-prism">src/data/persistence/repositories/deposit.repository.ts:56</a></div>
                         </td>
                     </tr>
 
@@ -785,14 +838,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="17"
-                                    class="link-to-prism">src/data/persistence/repositories/deposit.repository.ts:17</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="28"
+                                    class="link-to-prism">src/data/persistence/repositories/deposit.repository.ts:28</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Actualiza un depósito existente en la base de datos.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -803,6 +858,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -817,6 +873,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>El ID del depósito a actualizar.</p>
+
+                                            </td>
                                         </tr>
                                         <tr>
                                                 <td>entity</td>
@@ -829,6 +889,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>Los nuevos datos del depósito.</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -838,7 +902,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Una promesa que resuelve en el depósito actualizado.</p>
+
                             </div>
                 </td>
             </tr>
@@ -862,10 +927,21 @@ export class DepositRepository implements DepositRepositoryInterface {
     @InjectRepository(DepositEntity)
     private readonly depositRepository: Repository&lt;DepositEntity&gt;,
   ) {}
+  /**
+   * Registra un nuevo depósito en la base de datos.
+   * @param entity Los datos del depósito a registrar.
+   * @returns Una promesa que resuelve en el depósito registrado.
+   */
   register(entity: DepositEntity): Promise&lt;DepositEntity&gt; {
     return this.depositRepository.save(entity);
   }
-
+  /**
+   * Actualiza un depósito existente en la base de datos.
+   * @param id El ID del depósito a actualizar.
+   * @param entity Los nuevos datos del depósito.
+   * @returns Una promesa que resuelve en el depósito actualizado.
+   * @throws &#x60;NotFoundException&#x60; si el depósito no existe.
+   */
   update(id: string, entity: DepositEntity): Promise&lt;DepositEntity&gt; {
     return this.depositRepository.update(id, entity).then((result) &#x3D;&gt; {
       if (result.affected &#x3D;&#x3D;&#x3D; 0) {
@@ -874,7 +950,11 @@ export class DepositRepository implements DepositRepositoryInterface {
       return entity;
     });
   }
-
+  /**
+   * Elimina un depósito de la base de datos.
+   * @param id El ID del depósito a eliminar.
+   * @param soft Indica si se debe realizar un borrado suave (soft delete).
+   */
   delete(id: string, soft?: boolean): void {
     this.findOneById(id);
     if (soft || soft &#x3D;&#x3D;&#x3D; undefined) {
@@ -912,11 +992,25 @@ export class DepositRepository implements DepositRepositoryInterface {
         }
       });
   }
+  // Métodos privados para realizar borrado suave (soft delete) o borrado duro (hard delete)...
 
+  /**
+   * Encuentra todos los depósitos en la base de datos.
+   * @returns Una promesa que resuelve en un arreglo de todos los depósitos.
+   */
   findAll(): Promise&lt;DepositEntity[]&gt; {
-        return this.depositRepository.find({ where: { deletedAt: undefined }, relations: [&#x27;account&#x27;]});
+    return this.depositRepository.find({
+      where: { deletedAt: undefined },
+      relations: [&#x27;account&#x27;],
+    });
   }
 
+  /**
+   * Encuentra un depósito por su ID en la base de datos.
+   * @param id El ID del depósito a encontrar.
+   * @returns Una promesa que resuelve en el depósito encontrado.
+   * @throws &#x60;NotFoundException&#x60; si el depósito no existe.
+   */
   async findOneById(id: string): Promise&lt;DepositEntity&gt; {
     return this.depositRepository
       .findOne({
@@ -927,11 +1021,18 @@ export class DepositRepository implements DepositRepositoryInterface {
         if (result) {
           return result;
         } else {
-          throw new NotFoundException(&#x60;El ID ${id} no existe en base de datos&#x60;);
+          throw new NotFoundException(
+            &#x60;El ID ${id} no existe en la base de datos&#x60;,
+          );
         }
       });
   }
 
+  /**
+   * Encuentra todos los depósitos asociados a una cuenta en la base de datos.
+   * @param accountId El ID de la cuenta asociada a los depósitos.
+   * @returns Una promesa que resuelve en un arreglo de todos los depósitos asociados a la cuenta.
+   */
   findByAccountId(accountId: string): Promise&lt;DepositEntity[]&gt; {
     return this.depositRepository.find({
       where: { account: { id: accountId }, deletedAt: undefined },
@@ -939,6 +1040,12 @@ export class DepositRepository implements DepositRepositoryInterface {
     });
   }
 
+  /**
+   * Encuentra todos los depósitos dentro de un rango de fechas en la base de datos.
+   * @param dateInit La fecha de inicio del rango.
+   * @param dateEnd La fecha de fin del rango.
+   * @returns Una promesa que resuelve en un arreglo de todos los depósitos dentro del rango de fechas.
+   */
   findByDataRange(
     dateInit: Date | number,
     dateEnd: Date | number,

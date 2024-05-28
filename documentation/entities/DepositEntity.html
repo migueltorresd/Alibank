@@ -115,6 +115,13 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Entidad para el depósito</p>
+
+            </p>
 
 
             <section data-compodoc="block-index">
@@ -199,10 +206,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/data/persistence/entities/deposit.entity.ts:26</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/data/persistence/entities/deposit.entity.ts:51</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Cuenta asociada al depósito</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -240,10 +253,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/data/persistence/entities/deposit.entity.ts:22</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/data/persistence/entities/deposit.entity.ts:41</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Monto del depósito</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -276,10 +295,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/data/persistence/entities/deposit.entity.ts:32</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/data/persistence/entities/deposit.entity.ts:63</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Fecha y hora del depósito</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -313,10 +338,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/data/persistence/entities/deposit.entity.ts:40</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">src/data/persistence/entities/deposit.entity.ts:77</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Fecha y hora en la que se eliminó el depósito (opcional)</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -348,10 +379,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/data/persistence/entities/deposit.entity.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/data/persistence/entities/deposit.entity.ts:29</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Identificador único del depósito</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -365,11 +402,24 @@ import { v4 as uuid } from &#x27;uuid&#x27;;
 import { DepositModel } from &#x27;../../models&#x27;;
 import { AccountEntity } from &#x27;./&#x27;;
 
+/**
+ * Entidad para el depósito
+ *
+ * @export
+ * @class DepositEntity
+ * @implements {DepositModel}
+ */
 @Entity({
   name: &#x27;deposit&#x27;,
   schema: &#x27;public&#x27;,
 })
 export class DepositEntity implements DepositModel {
+  /**
+   * Identificador único del depósito
+   *
+   * @type {string}
+   * @memberof DepositEntity
+   */
   @Column({
     name: &#x27;id&#x27;,
     type: &#x27;uuid&#x27;,
@@ -377,22 +427,46 @@ export class DepositEntity implements DepositModel {
   })
   id &#x3D; uuid();
 
+  /**
+   * Monto del depósito
+   *
+   * @type {number}
+   * @memberof DepositEntity
+   */
   @Column({
     name: &#x27;amount&#x27;,
     type: &#x27;numeric&#x27;,
   })
   amount &#x3D; 0;
 
+  /**
+   * Cuenta asociada al depósito
+   *
+   * @type {AccountEntity}
+   * @memberof DepositEntity
+   */
   @ManyToOne(() &#x3D;&gt; AccountEntity)
   @JoinColumn()
   account: AccountEntity;
 
+  /**
+   * Fecha y hora del depósito
+   *
+   * @type {(number | Date)}
+   * @memberof DepositEntity
+   */
   @Column({
     name: &#x27;date_time&#x27;,
     type: &#x27;numeric&#x27;,
   })
   dateTime: number | Date;
 
+  /**
+   * Fecha y hora en la que se eliminó el depósito (opcional)
+   *
+   * @type {(number | Date)}
+   * @memberof DepositEntity
+   */
   @Column({
     name: &#x27;deleted_at&#x27;,
     type: &#x27;timestamp&#x27;,

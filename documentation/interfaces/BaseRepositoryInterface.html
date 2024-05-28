@@ -124,6 +124,14 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Interfaz base para los repositorios que manejan entidades.</p>
+<p>Define métodos comunes para realizar operaciones CRUD en la base de datos.</p>
+
+            </p>
 
 
         <section data-compodoc="block-index">
@@ -200,14 +208,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="6"
-                                    class="link-to-prism">src/data/persistence/repositories/interfaces/base/base-repositories.interface.ts:6</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="37"
+                                    class="link-to-prism">src/data/persistence/repositories/interfaces/base/base-repositories.interface.ts:37</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Elimina una entidad de la base de datos.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -218,6 +228,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -232,6 +243,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>Identificador de la entidad a eliminar</p>
+
+                                            </td>
                                         </tr>
                                         <tr>
                                                 <td>soft</td>
@@ -244,6 +259,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>Indicador de eliminación suave (opcional)</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -279,19 +298,25 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="8"
-                                    class="link-to-prism">src/data/persistence/repositories/interfaces/base/base-repositories.interface.ts:8</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="45"
+                                    class="link-to-prism">src/data/persistence/repositories/interfaces/base/base-repositories.interface.ts:45</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene todas las entidades almacenadas en la base de datos.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>    <code>Promise&lt;E[]&gt;</code>
 
                         </div>
+                            <div class="io-description">
+                                <p>Promesa que resuelve con un arreglo de todas las entidades</p>
+
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -316,14 +341,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="10"
-                                    class="link-to-prism">src/data/persistence/repositories/interfaces/base/base-repositories.interface.ts:10</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="54"
+                                    class="link-to-prism">src/data/persistence/repositories/interfaces/base/base-repositories.interface.ts:54</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Busca una entidad por su identificador único en la base de datos.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -334,6 +361,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -348,6 +376,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>Identificador de la entidad a buscar</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -357,7 +389,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Promesa que resuelve con la entidad encontrada (o null si no se encuentra)</p>
+
                             </div>
                 </td>
             </tr>
@@ -383,14 +416,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="2"
-                                    class="link-to-prism">src/data/persistence/repositories/interfaces/base/base-repositories.interface.ts:2</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="18"
+                                    class="link-to-prism">src/data/persistence/repositories/interfaces/base/base-repositories.interface.ts:18</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Registra una nueva entidad en la base de datos.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -401,6 +436,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -415,6 +451,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>Entidad a registrar</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -424,7 +464,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Promesa que resuelve con la entidad registrada</p>
+
                             </div>
                 </td>
             </tr>
@@ -450,14 +491,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="4"
-                                    class="link-to-prism">src/data/persistence/repositories/interfaces/base/base-repositories.interface.ts:4</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="28"
+                                    class="link-to-prism">src/data/persistence/repositories/interfaces/base/base-repositories.interface.ts:28</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Actualiza una entidad existente en la base de datos.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -468,6 +511,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -482,6 +526,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>Identificador de la entidad a actualizar</p>
+
+                                            </td>
                                         </tr>
                                         <tr>
                                                 <td>entity</td>
@@ -494,6 +542,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>Datos actualizados de la entidad</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -503,7 +555,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Promesa que resuelve con la entidad actualizada</p>
+
                             </div>
                 </td>
             </tr>
@@ -516,14 +569,49 @@
 
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export interface BaseRepositoryInterface&lt;E&gt; {
+  /**
+   * Registra una nueva entidad en la base de datos.
+   *
+   * @param {E} entity Entidad a registrar
+   * @returns {Promise&lt;E&gt;} Promesa que resuelve con la entidad registrada
+   * @memberof BaseRepositoryInterface
+   */
   register(entity: E): Promise&lt;E&gt;;
 
+  /**
+   * Actualiza una entidad existente en la base de datos.
+   *
+   * @param {string} id Identificador de la entidad a actualizar
+   * @param {E} entity Datos actualizados de la entidad
+   * @returns {Promise&lt;E&gt;} Promesa que resuelve con la entidad actualizada
+   * @memberof BaseRepositoryInterface
+   */
   update(id: string, entity: E): Promise&lt;E&gt;;
 
+  /**
+   * Elimina una entidad de la base de datos.
+   *
+   * @param {string} id Identificador de la entidad a eliminar
+   * @param {boolean} [soft] Indicador de eliminación suave (opcional)
+   * @memberof BaseRepositoryInterface
+   */
   delete(id: string, soft?: boolean): void;
 
+  /**
+   * Obtiene todas las entidades almacenadas en la base de datos.
+   *
+   * @returns {Promise&lt;E[]&gt;} Promesa que resuelve con un arreglo de todas las entidades
+   * @memberof BaseRepositoryInterface
+   */
   findAll(): Promise&lt;E[]&gt;;
 
+  /**
+   * Busca una entidad por su identificador único en la base de datos.
+   *
+   * @param {string} id Identificador de la entidad a buscar
+   * @returns {Promise&lt;E&gt;} Promesa que resuelve con la entidad encontrada (o null si no se encuentra)
+   * @memberof BaseRepositoryInterface
+   */
   findOneById(id: string): Promise&lt;E&gt;;
 }
 </code></pre>

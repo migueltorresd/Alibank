@@ -3,11 +3,24 @@ import { v4 as uuid } from 'uuid';
 import { CustomerModel } from '../../models';
 import { DocumentTypeEntity } from './';
 
+/**
+ * Entidad para el cliente
+ *
+ * @export
+ * @class CustomerEntity
+ * @implements {CustomerModel}
+ */
 @Entity({
   name: 'customer',
   schema: 'public',
 })
 export class CustomerEntity implements CustomerModel {
+  /**
+   * Identificador único del cliente
+   *
+   * @type {string}
+   * @memberof CustomerEntity
+   */
   @Column({
     name: 'id',
     type: 'uuid',
@@ -15,12 +28,24 @@ export class CustomerEntity implements CustomerModel {
   })
   id = uuid();
 
-  @ManyToOne(() => DocumentTypeEntity ,{
-    cascade: false
+  /**
+   * Tipo de documento del cliente
+   *
+   * @type {DocumentTypeEntity}
+   * @memberof CustomerEntity
+   */
+  @ManyToOne(() => DocumentTypeEntity, {
+    cascade: false,
   })
   @JoinColumn()
   documentType: DocumentTypeEntity;
 
+  /**
+   * Número de documento del cliente
+   *
+   * @type {string}
+   * @memberof CustomerEntity
+   */
   @Column({
     name: 'document',
     type: 'varchar',
@@ -28,6 +53,12 @@ export class CustomerEntity implements CustomerModel {
   })
   document: string;
 
+  /**
+   * Nombre completo del cliente
+   *
+   * @type {string}
+   * @memberof CustomerEntity
+   */
   @Column({
     name: 'full_name',
     type: 'varchar',
@@ -35,6 +66,12 @@ export class CustomerEntity implements CustomerModel {
   })
   fullName: string;
 
+  /**
+   * Correo electrónico del cliente
+   *
+   * @type {string}
+   * @memberof CustomerEntity
+   */
   @Column({
     name: 'email',
     type: 'varchar',
@@ -42,6 +79,12 @@ export class CustomerEntity implements CustomerModel {
   })
   email: string;
 
+  /**
+   * Número de teléfono del cliente
+   *
+   * @type {string}
+   * @memberof CustomerEntity
+   */
   @Column({
     name: 'phone',
     type: 'varchar',
@@ -49,6 +92,12 @@ export class CustomerEntity implements CustomerModel {
   })
   phone: string;
 
+  /**
+   * Contraseña del cliente
+   *
+   * @type {string}
+   * @memberof CustomerEntity
+   */
   @Column({
     name: 'password',
     type: 'varchar',
@@ -56,6 +105,12 @@ export class CustomerEntity implements CustomerModel {
   })
   password: string;
 
+  /**
+   * URL del avatar del cliente (opcional)
+   *
+   * @type {string}
+   * @memberof CustomerEntity
+   */
   @Column({
     name: 'avatar_url',
     type: 'varchar',
@@ -64,12 +119,24 @@ export class CustomerEntity implements CustomerModel {
   })
   avatarUrl?: string;
 
+  /**
+   * Estado del cliente (activo/inactivo)
+   *
+   * @type {boolean}
+   * @memberof CustomerEntity
+   */
   @Column({
     name: 'state',
     type: 'boolean',
   })
   state = true;
 
+  /**
+   * Fecha y hora en la que se eliminó el cliente (opcional)
+   *
+   * @type {(Date | number)}
+   * @memberof CustomerEntity
+   */
   @Column({
     name: 'deleted_at',
     type: 'timestamp',
@@ -78,4 +145,3 @@ export class CustomerEntity implements CustomerModel {
   })
   deletedAt?: Date | number;
 }
-

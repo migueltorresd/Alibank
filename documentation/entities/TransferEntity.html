@@ -115,6 +115,13 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Entidad para la transferencia de fondos entre cuentas</p>
+
+            </p>
 
 
             <section data-compodoc="block-index">
@@ -212,10 +219,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/data/persistence/entities/transfer.entitty.ts:30</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/data/persistence/entities/transfer.entitty.ts:61</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Monto de la transferencia</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -248,10 +261,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/data/persistence/entities/transfer.entitty.ts:43</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="86" class="link-to-prism">src/data/persistence/entities/transfer.entitty.ts:86</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Fecha y hora de la transferencia</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -285,10 +304,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/data/persistence/entities/transfer.entitty.ts:51</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="100" class="link-to-prism">src/data/persistence/entities/transfer.entitty.ts:100</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Fecha de eliminación de la transferencia (si se elimina)</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -320,10 +345,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/data/persistence/entities/transfer.entitty.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/data/persistence/entities/transfer.entitty.ts:29</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Identificador único de la transferencia</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -357,10 +388,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/data/persistence/entities/transfer.entitty.ts:24</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/data/persistence/entities/transfer.entitty.ts:49</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Cuenta a donde llega el dinero</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -394,10 +431,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/data/persistence/entities/transfer.entitty.ts:20</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/data/persistence/entities/transfer.entitty.ts:39</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Cuenta de donde sale el dinero</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -430,10 +473,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/data/persistence/entities/transfer.entitty.ts:37</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">src/data/persistence/entities/transfer.entitty.ts:74</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Motivo de la transferencia</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -447,11 +496,24 @@ import { v4 as uuid } from &#x27;uuid&#x27;;
 import { TransferModel } from &#x27;../../models&#x27;;
 import { AccountEntity } from &#x27;./&#x27;;
 
+/**
+ * Entidad para la transferencia de fondos entre cuentas
+ *
+ * @export
+ * @class TransferEntity
+ * @implements {TransferModel}
+ */
 @Entity({
   name: &#x27;transfer&#x27;,
   schema: &#x27;public&#x27;,
 })
 export class TransferEntity implements TransferModel {
+  /**
+   * Identificador único de la transferencia
+   *
+   * @type {string}
+   * @memberof TransferEntity
+   */
   @Column({
     name: &#x27;id&#x27;,
     type: &#x27;uuid&#x27;,
@@ -459,20 +521,44 @@ export class TransferEntity implements TransferModel {
   })
   id &#x3D; uuid();
 
+  /**
+   * Cuenta de donde sale el dinero
+   *
+   * @type {AccountEntity}
+   * @memberof TransferEntity
+   */
   @ManyToOne(() &#x3D;&gt; AccountEntity)
   @JoinColumn()
   outCome: AccountEntity;
 
+  /**
+   * Cuenta a donde llega el dinero
+   *
+   * @type {AccountEntity}
+   * @memberof TransferEntity
+   */
   @ManyToOne(() &#x3D;&gt; AccountEntity)
   @JoinColumn()
   inCome: AccountEntity;
 
+  /**
+   * Monto de la transferencia
+   *
+   * @type {number}
+   * @memberof TransferEntity
+   */
   @Column({
     name: &#x27;amount&#x27;,
     type: &#x27;numeric&#x27;,
   })
   amount &#x3D; 0;
 
+  /**
+   * Motivo de la transferencia
+   *
+   * @type {string}
+   * @memberof TransferEntity
+   */
   @Column({
     name: &#x27;reason&#x27;,
     type: &#x27;varchar&#x27;,
@@ -480,12 +566,24 @@ export class TransferEntity implements TransferModel {
   })
   reason: string;
 
+  /**
+   * Fecha y hora de la transferencia
+   *
+   * @type {(number | Date)}
+   * @memberof TransferEntity
+   */
   @Column({
     name: &#x27;date_time&#x27;,
     type: &#x27;numeric&#x27;,
   })
   dateTime: number | Date;
 
+  /**
+   * Fecha de eliminación de la transferencia (si se elimina)
+   *
+   * @type {(number | Date)}
+   * @memberof TransferEntity
+   */
   @Column({
     name: &#x27;deleted_at&#x27;,
     type: &#x27;timestamp&#x27;,

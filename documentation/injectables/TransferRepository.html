@@ -253,14 +253,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="26"
-                                    class="link-to-prism">src/data/persistence/repositories/transfer.repository.ts:26</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="44"
+                                    class="link-to-prism">src/data/persistence/repositories/transfer.repository.ts:44</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Elimina una transferencia de la base de datos.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -271,6 +273,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -285,6 +288,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>El ID de la transferencia a eliminar.</p>
+
+                                            </td>
                                         </tr>
                                         <tr>
                                                 <td>soft</td>
@@ -297,6 +304,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>Opcional. Indica si se debe realizar un borrado suave o no. Por defecto es <code>true</code>.</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -332,19 +343,25 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="65"
-                                    class="link-to-prism">src/data/persistence/repositories/transfer.repository.ts:65</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="85"
+                                    class="link-to-prism">src/data/persistence/repositories/transfer.repository.ts:85</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Encuentra todas las transferencias en la base de datos.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="../entitys/TransferEntity.html" target="_self" >Promise&lt;TransferEntity[]&gt;</a></code>
 
                         </div>
+                            <div class="io-description">
+                                <p>Una promesa que resuelve en un arreglo de todas las transferencias.</p>
+
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -369,8 +386,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="118"
-                                    class="link-to-prism">src/data/persistence/repositories/transfer.repository.ts:118</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="156"
+                                    class="link-to-prism">src/data/persistence/repositories/transfer.repository.ts:156</a></div>
                         </td>
                     </tr>
 
@@ -448,14 +465,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="103"
-                                    class="link-to-prism">src/data/persistence/repositories/transfer.repository.ts:103</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="141"
+                                    class="link-to-prism">src/data/persistence/repositories/transfer.repository.ts:141</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Encuentra las transferencias de entrada por rango de fechas y cuenta en la base de datos.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -466,6 +485,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -480,6 +500,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>El ID de la cuenta de entrada.</p>
+
+                                            </td>
                                         </tr>
                                         <tr>
                                                 <td>dateInit</td>
@@ -492,6 +516,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>La fecha de inicio del rango.</p>
+
+                                            </td>
                                         </tr>
                                         <tr>
                                                 <td>dateEnd</td>
@@ -504,6 +532,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>La fecha de fin del rango.</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -513,7 +545,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Una promesa que resuelve en un arreglo de transferencias de entrada.</p>
+
                             </div>
                 </td>
             </tr>
@@ -541,14 +574,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="71"
-                                    class="link-to-prism">src/data/persistence/repositories/transfer.repository.ts:71</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="98"
+                                    class="link-to-prism">src/data/persistence/repositories/transfer.repository.ts:98</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Encuentra una transferencia por su ID en la base de datos.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -559,6 +594,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -573,6 +609,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>El ID de la transferencia a encontrar.</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -582,7 +622,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Una promesa que resuelve en la transferencia encontrada.</p>
+
                             </div>
                 </td>
             </tr>
@@ -608,14 +649,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="88"
-                                    class="link-to-prism">src/data/persistence/repositories/transfer.repository.ts:88</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="120"
+                                    class="link-to-prism">src/data/persistence/repositories/transfer.repository.ts:120</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Encuentra las transferencias de salida por rango de fechas y cuenta en la base de datos.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -626,6 +669,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -640,6 +684,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>El ID de la cuenta de salida.</p>
+
+                                            </td>
                                         </tr>
                                         <tr>
                                                 <td>dateInit</td>
@@ -652,6 +700,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>La fecha de inicio del rango.</p>
+
+                                            </td>
                                         </tr>
                                         <tr>
                                                 <td>dateEnd</td>
@@ -664,6 +716,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>La fecha de fin del rango.</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -673,7 +729,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Una promesa que resuelve en un arreglo de transferencias de salida.</p>
+
                             </div>
                 </td>
             </tr>
@@ -701,8 +758,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="35"
-                                    class="link-to-prism">src/data/persistence/repositories/transfer.repository.ts:35</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="53"
+                                    class="link-to-prism">src/data/persistence/repositories/transfer.repository.ts:53</a></div>
                         </td>
                     </tr>
 
@@ -768,14 +825,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="13"
-                                    class="link-to-prism">src/data/persistence/repositories/transfer.repository.ts:13</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="19"
+                                    class="link-to-prism">src/data/persistence/repositories/transfer.repository.ts:19</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Registra una nueva transferencia en la base de datos.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -786,6 +845,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -800,6 +860,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>Los datos de la transferencia a registrar.</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -809,7 +873,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Una promesa que resuelve en la transferencia registrada.</p>
+
                             </div>
                 </td>
             </tr>
@@ -838,8 +903,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="41"
-                                    class="link-to-prism">src/data/persistence/repositories/transfer.repository.ts:41</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="59"
+                                    class="link-to-prism">src/data/persistence/repositories/transfer.repository.ts:59</a></div>
                         </td>
                     </tr>
 
@@ -905,14 +970,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="17"
-                                    class="link-to-prism">src/data/persistence/repositories/transfer.repository.ts:17</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="30"
+                                    class="link-to-prism">src/data/persistence/repositories/transfer.repository.ts:30</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Actualiza una transferencia existente en la base de datos.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -923,6 +990,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -937,6 +1005,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>El ID de la transferencia a actualizar.</p>
+
+                                            </td>
                                         </tr>
                                         <tr>
                                                 <td>entity</td>
@@ -949,6 +1021,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>Los nuevos datos de la transferencia.</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -958,7 +1034,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Una promesa que resuelve en la transferencia actualizada.</p>
+
                             </div>
                 </td>
             </tr>
@@ -982,19 +1059,37 @@ export class TransferRepository implements TransferRepositoryInterface {
     @InjectRepository(TransferEntity)
     private readonly transferRepository: Repository&lt;TransferEntity&gt;,
   ) {}
+
+  /**
+   * Registra una nueva transferencia en la base de datos.
+   * @param entity Los datos de la transferencia a registrar.
+   * @returns Una promesa que resuelve en la transferencia registrada.
+   */
   register(entity: TransferEntity): Promise&lt;TransferEntity&gt; {
     return this.transferRepository.save(entity);
   }
 
+  /**
+   * Actualiza una transferencia existente en la base de datos.
+   * @param id El ID de la transferencia a actualizar.
+   * @param entity Los nuevos datos de la transferencia.
+   * @returns Una promesa que resuelve en la transferencia actualizada.
+   * @throws &#x60;NotFoundException&#x60; si la transferencia no existe.
+   */
   update(id: string, entity: TransferEntity): Promise&lt;TransferEntity&gt; {
     return this.transferRepository.update(id, entity).then((result) &#x3D;&gt; {
       if (result.affected &#x3D;&#x3D;&#x3D; 0) {
-        throw new NotFoundException(&#x60;El Id: ${id} no existe en base de datos&#x60;);
+        throw new NotFoundException(&#x60;El ID ${id} no existe en la base de datos&#x60;);
       }
       return entity;
     });
   }
 
+  /**
+   * Elimina una transferencia de la base de datos.
+   * @param id El ID de la transferencia a eliminar.
+   * @param soft Opcional. Indica si se debe realizar un borrado suave o no. Por defecto es &#x60;true&#x60;.
+   */
   delete(id: string, soft?: boolean) {
     this.findOneById(id);
     if (soft || soft &#x3D;&#x3D;&#x3D; undefined) {
@@ -1020,9 +1115,7 @@ export class TransferRepository implements TransferRepositoryInterface {
         if (result) {
           return result;
         } else {
-          throw new NotFoundException(
-            &#x60;El Id: ${id} no existe en base de datos&#x60;,
-          );
+          throw new NotFoundException(&#x60;El ID ${id} no existe en la base de datos&#x60;);
         }
       });
     newTransfer &#x3D; {
@@ -1034,12 +1127,23 @@ export class TransferRepository implements TransferRepositoryInterface {
     this.update(transfer.id, newTransfer);
   }
 
+  /**
+   * Encuentra todas las transferencias en la base de datos.
+   * @returns Una promesa que resuelve en un arreglo de todas las transferencias.
+   */
   findAll(): Promise&lt;TransferEntity[]&gt; {
     return this.transferRepository.find({
       where: { deletedAt: undefined },
+      relations: [&#x27;inCome&#x27;, &#x27;outCome&#x27;],
     });
   }
 
+  /**
+   * Encuentra una transferencia por su ID en la base de datos.
+   * @param id El ID de la transferencia a encontrar.
+   * @returns Una promesa que resuelve en la transferencia encontrada.
+   * @throws &#x60;NotFoundException&#x60; si la transferencia no existe.
+   */
   async findOneById(id: string): Promise&lt;TransferEntity&gt; {
     return this.transferRepository
       .findOne({
@@ -1050,13 +1154,18 @@ export class TransferRepository implements TransferRepositoryInterface {
         if (result) {
           return result;
         } else {
-          throw new NotFoundException(
-            &#x60;El Id: ${id} no existe en base de datos&#x60;,
-          );
+          throw new NotFoundException(&#x60;El ID ${id} no existe en la base de datos&#x60;);
         }
       });
   }
 
+  /**
+   * Encuentra las transferencias de salida por rango de fechas y cuenta en la base de datos.
+   * @param accountId El ID de la cuenta de salida.
+   * @param dateInit La fecha de inicio del rango.
+   * @param dateEnd La fecha de fin del rango.
+   * @returns Una promesa que resuelve en un arreglo de transferencias de salida.
+   */
   findOutcomeByDataRange(
     accountId: string,
     dateInit: Date | number,
@@ -1066,12 +1175,18 @@ export class TransferRepository implements TransferRepositoryInterface {
       where: {
         dateTime: Between(dateInit, dateEnd),
         outCome: { id: accountId },
-        
       },
       relations: [&#x27;inCome&#x27;, &#x27;outCome&#x27;],
     });
   }
 
+  /**
+   * Encuentra las transferencias de entrada por rango de fechas y cuenta en la base de datos.
+   * @param accountId El ID de la cuenta de entrada.
+   * @param dateInit La fecha de inicio del rango.
+   * @param dateEnd La fecha de fin del rango.
+   * @returns Una promesa que resuelve en un arreglo de transferencias de entrada.
+   */
   findIncomeByDataRange(
     accountId: string,
     dateInit: Date | number,

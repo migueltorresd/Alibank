@@ -117,6 +117,13 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Repositorio para la entidad de cuenta.</p>
+
+            </p>
 
 
 
@@ -190,7 +197,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/data/persistence/repositories/account.repository.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/data/persistence/repositories/account.repository.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -253,14 +260,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="44"
-                                    class="link-to-prism">src/data/persistence/repositories/account.repository.ts:44</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="80"
+                                    class="link-to-prism">src/data/persistence/repositories/account.repository.ts:80</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Elimina una cuenta.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -271,6 +280,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -285,6 +295,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>ID de la cuenta a eliminar</p>
+
+                                            </td>
                                         </tr>
                                         <tr>
                                                 <td>soft</td>
@@ -297,6 +311,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>Indica si la eliminación debe ser suave (borrado lógico) o no</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -332,19 +350,25 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="69"
-                                    class="link-to-prism">src/data/persistence/repositories/account.repository.ts:69</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="111"
+                                    class="link-to-prism">src/data/persistence/repositories/account.repository.ts:111</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Encuentra todas las cuentas.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="../entitys/AccountEntity.html" target="_self" >Promise&lt;AccountEntity[]&gt;</a></code>
 
                         </div>
+                            <div class="io-description">
+                                <p>Promesa que resuelve con un arreglo de todas las cuentas</p>
+
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -369,14 +393,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="91"
-                                    class="link-to-prism">src/data/persistence/repositories/account.repository.ts:91</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="152"
+                                    class="link-to-prism">src/data/persistence/repositories/account.repository.ts:152</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Encuentra cuentas por el ID de su tipo de cuenta.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -387,6 +413,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -401,6 +428,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>ID del tipo de cuenta asociado a las cuentas</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -410,7 +441,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Promesa que resuelve con un arreglo de cuentas encontradas</p>
+
                             </div>
                 </td>
             </tr>
@@ -436,14 +468,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="81"
-                                    class="link-to-prism">src/data/persistence/repositories/account.repository.ts:81</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="137"
+                                    class="link-to-prism">src/data/persistence/repositories/account.repository.ts:137</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Encuentra cuentas por el ID de su cliente.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -454,6 +488,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -468,6 +503,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>ID del cliente asociado a las cuentas</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -477,7 +516,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Promesa que resuelve con un arreglo de cuentas encontradas</p>
+
                             </div>
                 </td>
             </tr>
@@ -503,14 +543,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="76"
-                                    class="link-to-prism">src/data/persistence/repositories/account.repository.ts:76</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="125"
+                                    class="link-to-prism">src/data/persistence/repositories/account.repository.ts:125</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Encuentra cuentas por su estado.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -521,6 +563,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -535,6 +578,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>Estado de las cuentas a buscar</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -544,7 +591,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Promesa que resuelve con un arreglo de cuentas encontradas</p>
+
                             </div>
                 </td>
             </tr>
@@ -570,14 +618,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="27"
-                                    class="link-to-prism">src/data/persistence/repositories/account.repository.ts:27</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="56"
+                                    class="link-to-prism">src/data/persistence/repositories/account.repository.ts:56</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Encuentra una cuenta por su ID.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -588,6 +638,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -602,6 +653,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>ID de la cuenta a buscar</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -611,7 +666,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Promesa que resuelve con la cuenta encontrada</p>
+
                             </div>
                 </td>
             </tr>
@@ -639,8 +695,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="53"
-                                    class="link-to-prism">src/data/persistence/repositories/account.repository.ts:53</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="89"
+                                    class="link-to-prism">src/data/persistence/repositories/account.repository.ts:89</a></div>
                         </td>
                     </tr>
 
@@ -706,14 +762,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="14"
-                                    class="link-to-prism">src/data/persistence/repositories/account.repository.ts:14</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="28"
+                                    class="link-to-prism">src/data/persistence/repositories/account.repository.ts:28</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Registra una nueva cuenta.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -724,6 +782,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -738,6 +797,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>Entidad de la cuenta a registrar</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -747,7 +810,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Promesa que resuelve con la cuenta registrada</p>
+
                             </div>
                 </td>
             </tr>
@@ -776,8 +840,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="57"
-                                    class="link-to-prism">src/data/persistence/repositories/account.repository.ts:57</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="93"
+                                    class="link-to-prism">src/data/persistence/repositories/account.repository.ts:93</a></div>
                         </td>
                     </tr>
 
@@ -845,14 +909,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="18"
-                                    class="link-to-prism">src/data/persistence/repositories/account.repository.ts:18</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="40"
+                                    class="link-to-prism">src/data/persistence/repositories/account.repository.ts:40</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Actualiza una cuenta existente.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -863,6 +929,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -877,6 +944,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>ID de la cuenta a actualizar</p>
+
+                                            </td>
                                         </tr>
                                         <tr>
                                                 <td>entity</td>
@@ -889,6 +960,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>Nuevos datos de la cuenta</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -898,7 +973,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Promesa que resuelve con la cuenta actualizada</p>
+
                             </div>
                 </td>
             </tr>
@@ -916,6 +992,13 @@ import { Repository } from &#x27;typeorm&#x27;;
 import { AccountEntity } from &#x27;../entities&#x27;;
 import { AccountRepositoryInterface } from &#x27;./interfaces/&#x27;;
 
+/**
+ * Repositorio para la entidad de cuenta.
+ *
+ * @export
+ * @class AccountRepository
+ * @implements {AccountRepositoryInterface} Interfaz del repositorio de cuentas
+ */
 @Injectable()
 export class AccountRepository implements AccountRepositoryInterface {
   constructor(
@@ -923,19 +1006,41 @@ export class AccountRepository implements AccountRepositoryInterface {
     private readonly userRepository: Repository&lt;AccountEntity&gt;,
   ) {}
 
+  /**
+   * Registra una nueva cuenta.
+   *
+   * @param {AccountEntity} entity Entidad de la cuenta a registrar
+   * @returns {Promise&lt;AccountEntity&gt;} Promesa que resuelve con la cuenta registrada
+   * @memberof AccountRepository
+   */
   register(entity: AccountEntity): Promise&lt;AccountEntity&gt; {
     return this.userRepository.save(entity);
   }
 
+  /**
+   * Actualiza una cuenta existente.
+   *
+   * @param {string} id ID de la cuenta a actualizar
+   * @param {AccountEntity} entity Nuevos datos de la cuenta
+   * @returns {Promise&lt;AccountEntity&gt;} Promesa que resuelve con la cuenta actualizada
+   * @memberof AccountRepository
+   */
   async update(id: string, entity: AccountEntity): Promise&lt;AccountEntity&gt; {
     return this.userRepository.update(id, entity).then((result) &#x3D;&gt; {
       if (result.affected &#x3D;&#x3D;&#x3D; 0) {
-        throw new NotFoundException(&#x60;El Id: ${id} no existe en base de datos&#x60;);
+        throw new NotFoundException(&#x60;El Id: ${id} no existe en la base de datos&#x60;);
       }
       return entity;
     });
   }
 
+  /**
+   * Encuentra una cuenta por su ID.
+   *
+   * @param {string} id ID de la cuenta a buscar
+   * @returns {Promise&lt;AccountEntity&gt;} Promesa que resuelve con la cuenta encontrada
+   * @memberof AccountRepository
+   */
   findOneById(id: string): Promise&lt;AccountEntity&gt; {
     const deletedAt &#x3D; undefined;
     return this.userRepository
@@ -947,12 +1052,19 @@ export class AccountRepository implements AccountRepositoryInterface {
           return result;
         } else {
           throw new NotFoundException(
-            &#x60;El Id: ${id} no existe en base de datos&#x60;,
+            &#x60;El Id: ${id} no existe en la base de datos&#x60;,
           );
         }
       });
   }
 
+  /**
+   * Elimina una cuenta.
+   *
+   * @param {string} id ID de la cuenta a eliminar
+   * @param {boolean} [soft] Indica si la eliminación debe ser suave (borrado lógico) o no
+   * @memberof AccountRepository
+   */
   delete(id: string, soft?: boolean): void {
     this.findOneById(id);
     if (soft || soft &#x3D;&#x3D;&#x3D; undefined) {
@@ -978,6 +1090,12 @@ export class AccountRepository implements AccountRepositoryInterface {
     this.update(account.id, newAccount);
   }
 
+  /**
+   * Encuentra todas las cuentas.
+   *
+   * @returns {Promise&lt;AccountEntity[]&gt;} Promesa que resuelve con un arreglo de todas las cuentas
+   * @memberof AccountRepository
+   */
   findAll(): Promise&lt;AccountEntity[]&gt; {
     const deletedAt &#x3D; undefined;
     return this.userRepository.find({
@@ -985,21 +1103,40 @@ export class AccountRepository implements AccountRepositoryInterface {
     });
   }
 
+  /**
+   * Encuentra cuentas por su estado.
+   *
+   * @param {boolean} state Estado de las cuentas a buscar
+   * @returns {Promise&lt;AccountEntity[]&gt;} Promesa que resuelve con un arreglo de cuentas encontradas
+   * @memberof AccountRepository
+   */
   findByState(state: boolean): Promise&lt;AccountEntity[]&gt; {
     const deletedAt &#x3D; undefined;
     return this.userRepository.find({ where: { state, deletedAt } });
   }
 
+  /**
+   * Encuentra cuentas por el ID de su cliente.
+   *
+   * @param {string} customerId ID del cliente asociado a las cuentas
+   * @returns {Promise&lt;AccountEntity[]&gt;} Promesa que resuelve con un arreglo de cuentas encontradas
+   * @memberof AccountRepository
+   */
   findByCustomer(customerId: string): Promise&lt;AccountEntity[]&gt; {
     const deletedAt &#x3D; undefined;
     return this.userRepository.find({
       where: { customer: { id: customerId }, deletedAt },
-      relations: [
-        &#x27;accountType&#x27;,
-      ],
+      relations: [&#x27;accountType&#x27;],
     });
   }
 
+  /**
+   * Encuentra cuentas por el ID de su tipo de cuenta.
+   *
+   * @param {string} accountTypeId ID del tipo de cuenta asociado a las cuentas
+   * @returns {Promise&lt;AccountEntity[]&gt;} Promesa que resuelve con un arreglo de cuentas encontradas
+   * @memberof AccountRepository
+   */
   findByAccountType(accountTypeId: string): Promise&lt;AccountEntity[]&gt; {
     const deletedAt &#x3D; undefined;
     return this.userRepository.find({

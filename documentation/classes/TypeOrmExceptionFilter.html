@@ -121,6 +121,13 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Clase que representa un filtro de excepciones para errores de TypeORM.</p>
+
+            </p>
 
 
             <p class="comment">
@@ -186,14 +193,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="6"
-                                    class="link-to-prism">src/data/persistence/utils/exception-filters/typeorm.exception-filters.ts:6</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="14"
+                                    class="link-to-prism">src/data/persistence/utils/exception-filters/typeorm.exception-filters.ts:14</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Método para manejar la excepción de TypeORM.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -204,6 +213,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -218,6 +228,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>La excepción capturada.</p>
+
+                                            </td>
                                         </tr>
                                         <tr>
                                                 <td>host</td>
@@ -230,6 +244,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>El contexto de los argumentos de la solicitud.</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -258,13 +276,23 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ArgumentsHost, Catch, ExceptionFilter } from &#x27;@nestjs/common&#x27;;
 import { TypeORMError } from &#x27;typeorm&#x27;;
 
+/**
+ * Clase que representa un filtro de excepciones para errores de TypeORM.
+ */
 @Catch(TypeORMError)
 export class TypeOrmExceptionFilter implements ExceptionFilter {
+  /**
+   * Método para manejar la excepción de TypeORM.
+   * @param exception La excepción capturada.
+   * @param host El contexto de los argumentos de la solicitud.
+   */
   catch(exception: TypeORMError, host: ArgumentsHost) {
     const response &#x3D; host.switchToHttp().getResponse();
     const message &#x3D; exception.message;
     const code: number &#x3D; (exception as any).code;
     const aditional &#x3D; (exception as any).detail;
+
+    // Crear una respuesta personalizada para el error de TypeORM.
     const customResponse &#x3D; {
       status: 500,
       message: &#x27;Ocurrió un error&#x27;,
@@ -274,6 +302,7 @@ export class TypeOrmExceptionFilter implements ExceptionFilter {
       timestamp: new Date().toISOString(),
     };
 
+    // Enviar la respuesta personalizada al cliente.
     response.status(customResponse.status).json(customResponse);
   }
 }

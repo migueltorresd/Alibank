@@ -115,6 +115,13 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Entidad para la cuenta del cliente</p>
+
+            </p>
 
 
             <section data-compodoc="block-index">
@@ -204,10 +211,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/data/persistence/entities/account.entity.ts:23</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/data/persistence/entities/account.entity.ts:48</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Tipo de cuenta</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -245,10 +258,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/data/persistence/entities/account.entity.ts:29</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/data/persistence/entities/account.entity.ts:60</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Saldo de la cuenta</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -282,10 +301,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/data/persistence/entities/account.entity.ts:19</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/data/persistence/entities/account.entity.ts:38</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Cliente asociado a la cuenta</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -319,10 +344,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/data/persistence/entities/account.entity.ts:43</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="86" class="link-to-prism">src/data/persistence/entities/account.entity.ts:86</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Fecha y hora en la que se eliminó la cuenta (opcional)</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -354,10 +385,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/data/persistence/entities/account.entity.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/data/persistence/entities/account.entity.ts:28</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Identificador único de la cuenta</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -389,10 +426,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/data/persistence/entities/account.entity.ts:35</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="72" class="link-to-prism">src/data/persistence/entities/account.entity.ts:72</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Estado de la cuenta (activo/inactivo)</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -405,11 +448,24 @@
 import { AccountTypeEntity, CustomerEntity } from &#x27;.&#x27;;
 import { AccountModel } from &#x27;../../models&#x27;;
 
+/**
+ * Entidad para la cuenta del cliente
+ *
+ * @export
+ * @class AccountEntity
+ * @implements {AccountModel}
+ */
 @Entity({
   name: &#x27;account&#x27;,
   schema: &#x27;public&#x27;,
 })
 export class AccountEntity implements AccountModel {
+  /**
+   * Identificador único de la cuenta
+   *
+   * @type {string}
+   * @memberof AccountEntity
+   */
   @Column({
     name: &#x27;id&#x27;,
     type: &#x27;varchar&#x27;,
@@ -417,26 +473,56 @@ export class AccountEntity implements AccountModel {
   })
   id &#x3D; generateID();
 
+  /**
+   * Cliente asociado a la cuenta
+   *
+   * @type {CustomerEntity}
+   * @memberof AccountEntity
+   */
   @ManyToOne(() &#x3D;&gt; CustomerEntity)
   @JoinColumn()
   customer: CustomerEntity;
 
+  /**
+   * Tipo de cuenta
+   *
+   * @type {AccountTypeEntity}
+   * @memberof AccountEntity
+   */
   @ManyToOne(() &#x3D;&gt; AccountTypeEntity)
   @JoinColumn()
   accountType: AccountTypeEntity;
 
+  /**
+   * Saldo de la cuenta
+   *
+   * @type {number}
+   * @memberof AccountEntity
+   */
   @Column({
     name: &#x27;balance&#x27;,
     type: &#x27;numeric&#x27;,
   })
   balance &#x3D; 0;
 
+  /**
+   * Estado de la cuenta (activo/inactivo)
+   *
+   * @type {boolean}
+   * @memberof AccountEntity
+   */
   @Column({
     name: &#x27;state&#x27;,
     type: &#x27;boolean&#x27;,
   })
   state &#x3D; true;
 
+  /**
+   * Fecha y hora en la que se eliminó la cuenta (opcional)
+   *
+   * @type {(Date | number)}
+   * @memberof AccountEntity
+   */
   @Column({
     name: &#x27;deleted_at&#x27;,
     type: &#x27;timestamp&#x27;,
@@ -446,9 +532,14 @@ export class AccountEntity implements AccountModel {
   deletedAt?: Date | number;
 }
 
+/**
+ * Genera un identificador único para la cuenta
+ *
+ * @returns {string} ID generado
+ */
 function generateID(): string {
   const bank &#x3D; process.env.BANK_ID ?? &#x27;&#x27;;
-  return 20000 +&#x27;&#x27;+ bank +&#x27;&#x27;+ Math.floor(Math.random() * 10000)
+  return &#x27;20000&#x27; + bank + Math.floor(Math.random() * 10000);
 }
 </code></pre>
     </div>

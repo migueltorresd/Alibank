@@ -10,12 +10,23 @@ export class CustomerRepository implements CustomerRepositoryInterface {
     @InjectRepository(CustomerEntity)
     private readonly customerRepository: Repository<CustomerEntity>,
   ) {}
-
+ /**
+   * Registra un nuevo cliente en la base de datos.
+   * @param entity Los datos del cliente a registrar.
+   * @returns Una promesa que resuelve en el cliente registrado.
+   */
   register(entity: CustomerEntity): Promise<CustomerEntity> {
     console.log(entity)
     return this.customerRepository.save(entity);
-  }
 
+  }
+  /**
+   * Actualiza un cliente existente en la base de datos.
+   * @param id El ID del cliente a actualizar.
+   * @param entity Los nuevos datos del cliente.
+   * @returns Una promesa que resuelve en el cliente actualizado.
+   * @throws `NotFoundException` si el cliente no existe.
+   */
   async update(id: string, entity: CustomerEntity): Promise<CustomerEntity> {
     return this.customerRepository.update(id, entity).then((result) => {
       if (result.affected === 0) {
@@ -25,6 +36,11 @@ export class CustomerRepository implements CustomerRepositoryInterface {
     });
   }
 
+   /**
+   * Elimina un cliente de la base de datos.
+   * @param id El ID del cliente a eliminar.
+   * @param soft Indica si se debe realizar un borrado suave (soft delete).
+   */
   delete(id: string, soft?: boolean) {
     this.findOneById(id);
     if (soft || soft === undefined) {

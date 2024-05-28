@@ -10,10 +10,21 @@ export class DepositRepository implements DepositRepositoryInterface {
     @InjectRepository(DepositEntity)
     private readonly depositRepository: Repository<DepositEntity>,
   ) {}
+  /**
+   * Registra un nuevo depósito en la base de datos.
+   * @param entity Los datos del depósito a registrar.
+   * @returns Una promesa que resuelve en el depósito registrado.
+   */
   register(entity: DepositEntity): Promise<DepositEntity> {
     return this.depositRepository.save(entity);
   }
-
+  /**
+   * Actualiza un depósito existente en la base de datos.
+   * @param id El ID del depósito a actualizar.
+   * @param entity Los nuevos datos del depósito.
+   * @returns Una promesa que resuelve en el depósito actualizado.
+   * @throws `NotFoundException` si el depósito no existe.
+   */
   update(id: string, entity: DepositEntity): Promise<DepositEntity> {
     return this.depositRepository.update(id, entity).then((result) => {
       if (result.affected === 0) {
@@ -22,7 +33,11 @@ export class DepositRepository implements DepositRepositoryInterface {
       return entity;
     });
   }
-
+  /**
+   * Elimina un depósito de la base de datos.
+   * @param id El ID del depósito a eliminar.
+   * @param soft Indica si se debe realizar un borrado suave (soft delete).
+   */
   delete(id: string, soft?: boolean): void {
     this.findOneById(id);
     if (soft || soft === undefined) {
@@ -60,11 +75,25 @@ export class DepositRepository implements DepositRepositoryInterface {
         }
       });
   }
+  // Métodos privados para realizar borrado suave (soft delete) o borrado duro (hard delete)...
 
+  /**
+   * Encuentra todos los depósitos en la base de datos.
+   * @returns Una promesa que resuelve en un arreglo de todos los depósitos.
+   */
   findAll(): Promise<DepositEntity[]> {
-        return this.depositRepository.find({ where: { deletedAt: undefined }, relations: ['account']});
+    return this.depositRepository.find({
+      where: { deletedAt: undefined },
+      relations: ['account'],
+    });
   }
 
+  /**
+   * Encuentra un depósito por su ID en la base de datos.
+   * @param id El ID del depósito a encontrar.
+   * @returns Una promesa que resuelve en el depósito encontrado.
+   * @throws `NotFoundException` si el depósito no existe.
+   */
   async findOneById(id: string): Promise<DepositEntity> {
     return this.depositRepository
       .findOne({
@@ -75,11 +104,18 @@ export class DepositRepository implements DepositRepositoryInterface {
         if (result) {
           return result;
         } else {
-          throw new NotFoundException(`El ID ${id} no existe en base de datos`);
+          throw new NotFoundException(
+            `El ID ${id} no existe en la base de datos`,
+          );
         }
       });
   }
 
+  /**
+   * Encuentra todos los depósitos asociados a una cuenta en la base de datos.
+   * @param accountId El ID de la cuenta asociada a los depósitos.
+   * @returns Una promesa que resuelve en un arreglo de todos los depósitos asociados a la cuenta.
+   */
   findByAccountId(accountId: string): Promise<DepositEntity[]> {
     return this.depositRepository.find({
       where: { account: { id: accountId }, deletedAt: undefined },
@@ -87,6 +123,12 @@ export class DepositRepository implements DepositRepositoryInterface {
     });
   }
 
+  /**
+   * Encuentra todos los depósitos dentro de un rango de fechas en la base de datos.
+   * @param dateInit La fecha de inicio del rango.
+   * @param dateEnd La fecha de fin del rango.
+   * @returns Una promesa que resuelve en un arreglo de todos los depósitos dentro del rango de fechas.
+   */
   findByDataRange(
     dateInit: Date | number,
     dateEnd: Date | number,

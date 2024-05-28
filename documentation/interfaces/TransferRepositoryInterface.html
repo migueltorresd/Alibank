@@ -124,6 +124,14 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Interfaz para el repositorio de transferencias.</p>
+<p>Extiende la interfaz base de repositorio y define métodos adicionales específicos para las transferencias.</p>
+
+            </p>
 
             <p class="comment">
                 <h3>Extends</h3>
@@ -200,19 +208,25 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="6"
-                                    class="link-to-prism">src/data/persistence/repositories/interfaces/transfer-repository.interface.ts:6</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="20"
+                                    class="link-to-prism">src/data/persistence/repositories/interfaces/transfer-repository.interface.ts:20</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Encuentra todas las transferencias.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="../entitys/TransferEntity.html" target="_self" >Promise&lt;TransferEntity[]&gt;</a></code>
 
                         </div>
+                            <div class="io-description">
+                                <p>Promesa que resuelve con un arreglo de todas las transferencias</p>
+
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -237,14 +251,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="14"
-                                    class="link-to-prism">src/data/persistence/repositories/interfaces/transfer-repository.interface.ts:14</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="55"
+                                    class="link-to-prism">src/data/persistence/repositories/interfaces/transfer-repository.interface.ts:55</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Encuentra las transferencias de entrada para una cuenta dentro de un rango de fechas.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -255,6 +271,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -269,6 +286,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>ID de la cuenta</p>
+
+                                            </td>
                                         </tr>
                                         <tr>
                                                 <td>dateInit</td>
@@ -281,6 +302,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>Fecha inicial del rango</p>
+
+                                            </td>
                                         </tr>
                                         <tr>
                                                 <td>dateEnd</td>
@@ -293,6 +318,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>Fecha final del rango</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -302,7 +331,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Promesa que resuelve con un arreglo de transferencias de entrada dentro del rango de fechas especificado</p>
+
                             </div>
                 </td>
             </tr>
@@ -328,14 +358,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="7"
-                                    class="link-to-prism">src/data/persistence/repositories/interfaces/transfer-repository.interface.ts:7</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="29"
+                                    class="link-to-prism">src/data/persistence/repositories/interfaces/transfer-repository.interface.ts:29</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Encuentra una transferencia por su ID.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -346,6 +378,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -360,6 +393,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>ID de la transferencia a buscar</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -369,7 +406,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Promesa que resuelve con la transferencia encontrada</p>
+
                             </div>
                 </td>
             </tr>
@@ -395,14 +433,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="8"
-                                    class="link-to-prism">src/data/persistence/repositories/interfaces/transfer-repository.interface.ts:8</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="40"
+                                    class="link-to-prism">src/data/persistence/repositories/interfaces/transfer-repository.interface.ts:40</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Encuentra las transferencias de salida para una cuenta dentro de un rango de fechas.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -413,6 +453,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -427,6 +468,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>ID de la cuenta</p>
+
+                                            </td>
                                         </tr>
                                         <tr>
                                                 <td>dateInit</td>
@@ -439,6 +484,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>Fecha inicial del rango</p>
+
+                                            </td>
                                         </tr>
                                         <tr>
                                                 <td>dateEnd</td>
@@ -451,6 +500,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>Fecha final del rango</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -460,7 +513,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Promesa que resuelve con un arreglo de transferencias de salida dentro del rango de fechas especificado</p>
+
                             </div>
                 </td>
             </tr>
@@ -475,16 +529,57 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { TransferEntity } from &#x27;../../entities&#x27;;
 import { BaseRepositoryInterface } from &#x27;./base/&#x27;;
 
-export interface TransferRepositoryInterface
-  extends BaseRepositoryInterface&lt;TransferEntity&gt; {
+/**
+ * Interfaz para el repositorio de transferencias.
+ *
+ * Extiende la interfaz base de repositorio y define métodos adicionales específicos para las transferencias.
+ *
+ * @export
+ * @interface TransferRepositoryInterface
+ * @extends {BaseRepositoryInterface&lt;TransferEntity&gt;} Interfaz base de repositorio para transferencias
+ */
+export interface TransferRepositoryInterface extends BaseRepositoryInterface&lt;TransferEntity&gt; {
+  /**
+   * Encuentra todas las transferencias.
+   *
+   * @returns {Promise&lt;TransferEntity[]&gt;} Promesa que resuelve con un arreglo de todas las transferencias
+   * @memberof TransferRepositoryInterface
+   */
   findAll(): Promise&lt;TransferEntity[]&gt;;
+
+  /**
+   * Encuentra una transferencia por su ID.
+   *
+   * @param {string} id ID de la transferencia a buscar
+   * @returns {Promise&lt;TransferEntity&gt;} Promesa que resuelve con la transferencia encontrada
+   * @memberof TransferRepositoryInterface
+   */
   findOneById(id: string): Promise&lt;TransferEntity&gt;;
+
+  /**
+   * Encuentra las transferencias de salida para una cuenta dentro de un rango de fechas.
+   *
+   * @param {string} accountId ID de la cuenta
+   * @param {(Date | number)} dateInit Fecha inicial del rango
+   * @param {(Date | number)} dateEnd Fecha final del rango
+   * @returns {Promise&lt;TransferEntity[]&gt;} Promesa que resuelve con un arreglo de transferencias de salida dentro del rango de fechas especificado
+   * @memberof TransferRepositoryInterface
+   */
   findOutcomeByDataRange(
     accountId: string,
     dateInit: Date | number,
     dateEnd: Date | number,
   ): Promise&lt;TransferEntity[]&gt;;
 
+  /**
+   * Encuentra las transferencias de entrada para una cuenta dentro de un rango de fechas.
+   *
+   * @param {string} accountId ID de la cuenta
+   * @param {(Date | number)} dateInit Fecha inicial del rango
+   * @param {(Date | number)} dateEnd Fecha final del rango
+   * @returns {Promise&lt;TransferEntity[]&gt;} Promesa que resuelve con un arreglo de transferencias de entrada dentro del rango de fechas especificado
+   * @memberof TransferRepositoryInterface
+   */
   findIncomeByDataRange(
     accountId: string,
     dateInit: Date | number,

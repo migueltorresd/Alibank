@@ -252,7 +252,7 @@
 
             <tr>
                 <td class="col-md-4">
-                        <div class="io-description"><p>Crear un deposito</p>
+                        <div class="io-description"><p>Crear un depósito</p>
 </div>
 
                             <div class="io-description">
@@ -264,6 +264,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -278,6 +279,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>Datos del depósito</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -287,7 +292,7 @@
 
                         </div>
                             <div class="io-description">
-                                <p>{DepositEntity}</p>
+                                <p>{Promise<DepositEntity>} Entidad del depósito creado</p>
 
                             </div>
                 </td>
@@ -322,7 +327,7 @@
 
             <tr>
                 <td class="col-md-4">
-                        <div class="io-description"><p>Borrar un deposito</p>
+                        <div class="io-description"><p>Borrar un depósito</p>
 </div>
 
                             <div class="io-description">
@@ -334,6 +339,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -348,6 +354,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>ID del depósito a borrar</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -393,7 +403,7 @@
 
             <tr>
                 <td class="col-md-4">
-                        <div class="io-description"><p>Obtener el historial de los depósitos en una cuenta</p>
+                        <div class="io-description"><p>Obtener el historial de depósitos en una cuenta</p>
 </div>
 
                             <div class="io-description">
@@ -405,6 +415,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -419,6 +430,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>ID de la cuenta</p>
+
+                                            </td>
                                         </tr>
                                         <tr>
                                                 <td>pagination</td>
@@ -431,6 +446,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>Configuración de paginación</p>
+
+                                            </td>
                                         </tr>
                                         <tr>
                                                 <td>dataRange</td>
@@ -443,6 +462,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>Rango de fechas y montos para filtrar</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -452,7 +475,7 @@
 
                         </div>
                             <div class="io-description">
-                                <p>{DepositEntity[]}</p>
+                                <p>{Promise&lt;DepositEntity[]&gt;} Lista de depósitos</p>
 
                             </div>
                 </td>
@@ -484,10 +507,10 @@ export class DepositService {
   ) {}
 
   /**
-   * Crear un deposito
+   * Crear un depósito
    *
-   * @param {DepositModel} deposit
-   * @return {*}  {DepositEntity}
+   * @param {DepositDTO} deposit Datos del depósito
+   * @return {*} {Promise&lt;DepositEntity&gt;} Entidad del depósito creado
    * @memberof DepositService
    */
   async createDeposit(deposit: DepositDTO): Promise&lt;DepositEntity&gt; {
@@ -505,9 +528,9 @@ export class DepositService {
   }
 
   /**
-   * Borrar un deposito
+   * Borrar un depósito
    *
-   * @param {string} depositId
+   * @param {string} depositId ID del depósito a borrar
    * @memberof DepositService
    */
   deleteDeposit(depositId: string): void {
@@ -515,12 +538,12 @@ export class DepositService {
   }
 
   /**
-   * Obtener el historial de los depósitos en una cuenta
+   * Obtener el historial de depósitos en una cuenta
    *
-   * @param {string} accountId
-   * @param {PaginationModel} pagination
-   * @param {DataRangeModel} [dataRange]
-   * @return {*}  {DepositEntity[]}
+   * @param {string} accountId ID de la cuenta
+   * @param {PaginationDTO} pagination Configuración de paginación
+   * @param {DataRangeDTO} [dataRange] Rango de fechas y montos para filtrar
+   * @return {*} {Promise&lt;DepositEntity[]&gt;} Lista de depósitos
    * @memberof DepositService
    */
   async getHistory(

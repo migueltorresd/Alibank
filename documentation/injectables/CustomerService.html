@@ -279,14 +279,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="132"
-                                    class="link-to-prism">src/business/services/customer/customer.service.ts:132</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="171"
+                                    class="link-to-prism">src/business/services/customer/customer.service.ts:171</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Eliminar un cliente del sistema</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -297,6 +299,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -311,6 +314,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>ID del cliente a eliminar</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -320,7 +327,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>{Promise<boolean>} true si el cliente se eliminó con éxito, false de lo contrario</p>
+
                             </div>
                 </td>
             </tr>
@@ -348,19 +356,25 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="39"
-                                    class="link-to-prism">src/business/services/customer/customer.service.ts:39</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="53"
+                                    class="link-to-prism">src/business/services/customer/customer.service.ts:53</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Obtener todos los clientes activos</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="../entitys/CustomerEntity.html" target="_self" >Promise&lt;CustomerEntity[]&gt;</a></code>
 
                         </div>
+                            <div class="io-description">
+                                <p>{Promise&lt;CustomerEntity[]&gt;} Lista de clientes activos</p>
+
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -385,19 +399,25 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="44"
-                                    class="link-to-prism">src/business/services/customer/customer.service.ts:44</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="65"
+                                    class="link-to-prism">src/business/services/customer/customer.service.ts:65</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Obtener todos los clientes eliminados</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="../entitys/CustomerEntity.html" target="_self" >Promise&lt;CustomerEntity[]&gt;</a></code>
 
                         </div>
+                            <div class="io-description">
+                                <p>{Promise&lt;CustomerEntity[]&gt;} Lista de clientes eliminados</p>
+
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -432,7 +452,7 @@
 
             <tr>
                 <td class="col-md-4">
-                        <div class="io-description"><p>Obtener información de un cliente</p>
+                        <div class="io-description"><p>Obtener información de un cliente por su ID</p>
 </div>
 
                             <div class="io-description">
@@ -444,6 +464,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -458,6 +479,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>ID del cliente</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -467,7 +492,7 @@
 
                         </div>
                             <div class="io-description">
-                                <p>{CustomerEntity}</p>
+                                <p>{Promise<CustomerEntity>} Entidad del cliente encontrado</p>
 
                             </div>
                 </td>
@@ -496,14 +521,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="34"
-                                    class="link-to-prism">src/business/services/customer/customer.service.ts:34</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="42"
+                                    class="link-to-prism">src/business/services/customer/customer.service.ts:42</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Obtener información de un cliente por su correo electrónico</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -514,6 +541,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -528,6 +556,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>Correo electrónico del cliente</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -537,7 +569,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>{Promise<CustomerEntity>} Entidad del cliente encontrado</p>
+
                             </div>
                 </td>
             </tr>
@@ -565,14 +598,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="61"
-                                    class="link-to-prism">src/business/services/customer/customer.service.ts:61</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="96"
+                                    class="link-to-prism">src/business/services/customer/customer.service.ts:96</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Registrar un nuevo cliente en el sistema</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -583,6 +618,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -597,6 +633,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>Datos del nuevo cliente</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -606,7 +646,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>{Promise&lt;{ customer: CustomerEntity; account: AccountEntity }&gt;} Cliente y cuenta creados</p>
+
                             </div>
                 </td>
             </tr>
@@ -632,14 +673,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="48"
-                                    class="link-to-prism">src/business/services/customer/customer.service.ts:48</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="76"
+                                    class="link-to-prism">src/business/services/customer/customer.service.ts:76</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Transformar datos del cliente a entidad del cliente</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -650,6 +693,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -664,6 +708,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>Datos del cliente</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -673,7 +721,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>{CustomerEntity} Entidad del cliente creada</p>
+
                             </div>
                 </td>
             </tr>
@@ -701,8 +750,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="120"
-                                    class="link-to-prism">src/business/services/customer/customer.service.ts:120</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="152"
+                                    class="link-to-prism">src/business/services/customer/customer.service.ts:152</a></div>
                         </td>
                     </tr>
 
@@ -721,6 +770,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -735,6 +785,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>ID del cliente a dar de baja</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -744,7 +798,7 @@
 
                         </div>
                             <div class="io-description">
-                                <p>{boolean}</p>
+                                <p>{Promise<boolean>} true si el cliente se dio de baja con éxito, false de lo contrario</p>
 
                             </div>
                 </td>
@@ -773,8 +827,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="98"
-                                    class="link-to-prism">src/business/services/customer/customer.service.ts:98</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="130"
+                                    class="link-to-prism">src/business/services/customer/customer.service.ts:130</a></div>
                         </td>
                     </tr>
 
@@ -793,6 +847,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -807,6 +862,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>ID del cliente a actualizar</p>
+
+                                            </td>
                                         </tr>
                                         <tr>
                                                 <td>customer</td>
@@ -819,6 +878,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>Nuevos datos del cliente</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -828,7 +891,7 @@
 
                         </div>
                             <div class="io-description">
-                                <p>{CustomerEntity}</p>
+                                <p>{Promise<CustomerEntity>} Entidad del cliente actualizado</p>
 
                             </div>
                 </td>
@@ -864,30 +927,58 @@ export class CustomerService {
   ) {}
 
   /**
-   * Obtener información de un cliente
+   * Obtener información de un cliente por su ID
    *
-   * @param {string} customerId
-   * @return {*}  {CustomerEntity}
+   * @param {string} customerId ID del cliente
+   * @return {*} {Promise&lt;CustomerEntity&gt;} Entidad del cliente encontrado
    * @memberof CustomerService
    */
   async getCustomerInfo(customerId: string): Promise&lt;CustomerEntity&gt; {
     const newCustomer &#x3D; await this.customerRepository.findOneById(customerId);
     return newCustomer;
   }
+
+  /**
+   * Obtener información de un cliente por su correo electrónico
+   *
+   * @param {string} email Correo electrónico del cliente
+   * @return {*} {Promise&lt;CustomerEntity&gt;} Entidad del cliente encontrado
+   * @memberof CustomerService
+   */
   async getCustomerInfoByEmail(email: string): Promise&lt;CustomerEntity&gt; {
     const newCustomer &#x3D; await this.customerRepository.findOneByEmail(email);
     return newCustomer;
   }
 
+  /**
+   * Obtener todos los clientes activos
+   *
+   * @return {*} {Promise&lt;CustomerEntity[]&gt;} Lista de clientes activos
+   * @memberof CustomerService
+   */
   async findAll(): Promise&lt;CustomerEntity[]&gt; {
     return (await this.customerRepository.findAll()).filter(
       (item) &#x3D;&gt; (item.deletedAt ?? true) &#x3D;&#x3D;&#x3D; true,
     );
   }
+
+  /**
+   * Obtener todos los clientes eliminados
+   *
+   * @return {*} {Promise&lt;CustomerEntity[]&gt;} Lista de clientes eliminados
+   * @memberof CustomerService
+   */
   findAllDeleted(): Promise&lt;CustomerEntity[]&gt; {
     return this.customerRepository.findAllDeleted();
   }
 
+  /**
+   * Transformar datos del cliente a entidad del cliente
+   *
+   * @param {CustomerDTO} customer Datos del cliente
+   * @return {*} {CustomerEntity} Entidad del cliente creada
+   * @memberof CustomerService
+   */
   transform(customer: CustomerDTO): CustomerEntity {
     const documentType &#x3D; new DocumentTypeEntity();
     documentType.id &#x3D; customer.documentTypeId;
@@ -901,10 +992,14 @@ export class CustomerService {
     return newCustomer;
   }
 
-  async newCustomer(customer: CustomerDTO): Promise&lt;{
-    customer: CustomerEntity;
-    account: AccountEntity;
-  }&gt; {
+  /**
+   * Registrar un nuevo cliente en el sistema
+   *
+   * @param {CustomerDTO} customer Datos del nuevo cliente
+   * @return {*} {Promise&lt;{ customer: CustomerEntity; account: AccountEntity }&gt;} Cliente y cuenta creados
+   * @memberof CustomerService
+   */
+  async newCustomer(customer: CustomerDTO): Promise&lt;{ customer: CustomerEntity; account: AccountEntity }&gt; {
     const documentType &#x3D; new DocumentTypeEntity();
     documentType.id &#x3D; customer.documentTypeId;
 
@@ -914,7 +1009,7 @@ export class CustomerService {
     newCustomer.fullName &#x3D; customer.fullName;
     if (await this.customerRepository.existEmail(customer.email)) {
       throw new NotFoundException(
-        &#x60;El email ${customer.email} ya  existe en base de datos&#x60;,
+        &#x60;El email ${customer.email} ya existe en la base de datos&#x60;,
       );
     }
     newCustomer.email &#x3D; customer.email;
@@ -933,9 +1028,9 @@ export class CustomerService {
   /**
    * Actualizar información de un cliente
    *
-   * @param {string} id
-   * @param {CustomerModel} customer
-   * @return {*}  {CustomerEntity}
+   * @param {string} id ID del cliente a actualizar
+   * @param {CustomerUpdateDTO} customer Nuevos datos del cliente
+   * @return {*} {Promise&lt;CustomerEntity&gt;} Entidad del cliente actualizado
    * @memberof CustomerService
    */
   async updatedCustomer(
@@ -956,8 +1051,8 @@ export class CustomerService {
   /**
    * Dar de baja a un cliente en el sistema
    *
-   * @param {string} id
-   * @return {*}  {boolean}
+   * @param {string} id ID del cliente a dar de baja
+   * @return {*} {Promise&lt;boolean&gt;} true si el cliente se dio de baja con éxito, false de lo contrario
    * @memberof CustomerService
    */
   async unsuscribe(id: string): Promise&lt;boolean&gt; {
@@ -972,6 +1067,13 @@ export class CustomerService {
     return false;
   }
 
+  /**
+   * Eliminar un cliente del sistema
+   *
+   * @param {string} id ID del cliente a eliminar
+   * @return {*} {Promise&lt;boolean&gt;} true si el cliente se eliminó con éxito, false de lo contrario
+   * @memberof CustomerService
+   */
   async deleteCustomer(id: string): Promise&lt;boolean&gt; {
     if (
       (await this.customerRepository.findOneById(id)).deletedAt &#x3D;&#x3D;&#x3D; undefined
