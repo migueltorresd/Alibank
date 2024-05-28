@@ -17,7 +17,7 @@ import {
 import { AccountService } from '../account';
 
 // Entities
-import { AccountDTO, CustomerDTO, SignDTO } from 'src/business/dtos';
+import { AccountDTO, CustomerDTO, SignDTO } from '../../dtos';
 import { CustomerEntity } from '../../../data/persistence/entities';
 
 @Injectable()
